@@ -191,6 +191,20 @@ public class UserMgtServiceImpl implements UserMgtService {
     }
 
     @Override
+    public ApiStatusVm logout(String token) {
+        ApiStatusVm apiStatusVm = new ApiStatusVm();
+        try {
+            String userMail = userJwtTokenRepository.removeUserJwt(token);
+            apiStatusVm.setJobDone(true);
+            apiStatusVm.setMsg("User: " + userMail + " logout from the system");
+        } catch (Exception e) {
+            apiStatusVm.setMsg("Logout unsuccessful. Error: " + e.getMessage());
+        }
+
+        return apiStatusVm;
+    }
+
+    @Override
     public UserInfo convertUserCreationVmToUsersLoginDomain(UserVm userVm) {
         UserInfo usersLogin = new UserInfo();
         usersLogin.setUserEmail(userVm.getUserEmail());

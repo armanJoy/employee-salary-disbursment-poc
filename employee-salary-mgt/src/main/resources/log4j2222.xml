@@ -2,8 +2,8 @@
 <Configuration status="WARN" monitorInterval="30">
     <Properties>
         <Property name="LOG_PATTERN">%d{yyyy-MM-dd'T'HH:mm:ss.SSSZ} %p %m%n</Property>
-	<!--  <Property name="APP_LOG_ROOT">C:\Temp</Property>  --> 
-	 <Property name="APP_LOG_ROOT">/opt/logs</Property>  
+        <!--  <Property name="APP_LOG_ROOT">C:\Temp</Property>  --> 
+        <Property name="APP_LOG_ROOT">/opt/logs</Property>  
     </Properties>
     <Appenders>
         <Console name="Console" target="SYSTEM_OUT" follow="true">
@@ -11,8 +11,8 @@
         </Console>
  
         <RollingFile name="appLog"
-            fileName="${APP_LOG_ROOT}/arcgen-healthapp-application.log"
-            filePattern="${APP_LOG_ROOT}/application-%d{yyyy-MM-dd}-%i.log">
+                     fileName="${APP_LOG_ROOT}/application.log"
+                     filePattern="${APP_LOG_ROOT}/application-%d{yyyy-MM-dd}-%i.log">
             <PatternLayout pattern="${LOG_PATTERN}" />
             <Policies>
                 <SizeBasedTriggeringPolicy size="19500KB" />
@@ -23,7 +23,7 @@
     </Appenders>
     <Loggers>
  
-        <Logger name="com.arcgen.healthapp" additivity="false">
+        <Logger name="com.ibcs.salaryapp" additivity="false">
             <AppenderRef ref="appLog" />
             <AppenderRef ref="Console" />
         </Logger>

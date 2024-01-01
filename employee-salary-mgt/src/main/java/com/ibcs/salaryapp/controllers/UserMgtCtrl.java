@@ -77,4 +77,10 @@ public class UserMgtCtrl {
         return new ResponseEntity(loginResVm, HttpStatus.OK);
     }
 
+    @PostMapping("/logout")
+    public ResponseEntity<ApiStatusVm> logout(@Valid @RequestParam String token) {
+        logger.info(this.getClass().getName() + " :inside logout method");
+        return new ResponseEntity(userMgtService.logout(token), HttpStatus.OK);
+    }
+
 }

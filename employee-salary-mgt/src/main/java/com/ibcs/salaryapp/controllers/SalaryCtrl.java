@@ -40,6 +40,14 @@ public class SalaryCtrl {
     @Autowired
     SalaryService salaryService;
 
+    @GetMapping(value = "/employee-salary")
+    public ResponseEntity<List<EmployeeSalary>> getEmployeeSalaryDetails() {
+        logger.info("inside getEmployeeSalaryDetails API");
+        List<EmployeeSalary> employeeSalarys = salaryService.getEmployeeSalaryDetails();
+
+        return (employeeSalarys != null && employeeSalarys.size() > 0) ? new ResponseEntity(employeeSalarys, HttpStatus.OK) : new ResponseEntity(new ArrayList<>(), HttpStatus.NOT_FOUND);
+    }
+
     @GetMapping(value = "/monthly-details")
     public ResponseEntity<List<EmployeeSalary>> getDisburseSalaryDetails(@Positive @RequestParam int month, @Positive @RequestParam int year) {
         logger.info("inside getDisburseSalaryDetails API");
@@ -60,23 +68,10 @@ public class SalaryCtrl {
         return new ResponseEntity(salaryService.updateBasicSalary(newBasicSalary), HttpStatus.OK);
     }
 
-    @PatchMapping(value = "/salary-balance")
+    @PatchMapping(value = "/company-balance")
     public ResponseEntity<ApiStatusVm> updateComSalaryAcBalance(@Positive @RequestParam double newBalance) {
         logger.info("inside updateComSalaryAcBalance API");
         return new ResponseEntity(salaryService.updateComSalaryAcBalance(newBalance), HttpStatus.OK);
     }
 
-//    @DeleteMapping(value = "/remove")
-//    public ResponseEntity<ApiStatusVm> removeEmpBank(@PositiveOrZero @RequestParam long empBankId) {
-//        logger.info("inside removeEmpBank API");
-//        return new ResponseEntity(empBankService.removeEmpBank(empBankId), HttpStatus.OK);
-//    }
-//
-//    @GetMapping(value = "")
-//    public ResponseEntity<EmpBankVm> getEmpBank(@Valid @RequestParam long userId) {
-//        logger.info("inside getEmpBank API");
-//        EmpBankVm empBankVm = empBankService.getEmpBank(userId);
-//
-//        return (empBankVm != null) ? new ResponseEntity(empBankVm, HttpStatus.OK) : new ResponseEntity("No bank information found for this employee", HttpStatus.NOT_FOUND);
-//    }
 }

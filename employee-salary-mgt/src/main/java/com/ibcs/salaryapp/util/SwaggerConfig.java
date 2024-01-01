@@ -32,7 +32,7 @@ public class SwaggerConfig {
     }
 
     private ApiInfo apiInfo() {
-        return new ApiInfo("Vizzhy REST API", "Vizzhy REST API", APP_VERSION, "Terms of service", new Contact("", "", ""), "License of API", "API license URL", Collections.emptyList());
+        return new ApiInfo("Salary App REST API", "Salary App REST API", APP_VERSION, "Terms of service", new Contact("", "", ""), "License of API", "API license URL", Collections.emptyList());
     }
 
     private List<SecurityScheme> securitySchemes() {

@@ -8355,3 +8355,787 @@ com.ibcs.salaryapp.controllers.SalaryCtrl#getDisburseSalaryDetails(int, int) map
 2024-01-01 18:13:59.905  INFO 15466 --- [Thread-4] c.z.h.HikariDataSource                   : HikariPool-1 - Shutdown initiated...
 2024-01-01 18:13:59.999  INFO 15466 --- [Thread-4] c.z.h.HikariDataSource                   : HikariPool-1 - Shutdown completed.
 2024-01-01 18:14:00.264  INFO 15466 --- [restartedMain] c.i.s.SalaryApp                          : SalaryApp started successfully
+2024-01-01 18:30:44.226  INFO 16506 --- [restartedMain] c.i.s.SalaryApp                          : Starting SalaryApp using Java 14.0.2 on nemo with PID 16506 (/home/joy/Documents/Works/Job Preperation/ibcs-primax/employee-salary-disbursment-poc/employee-salary-mgt/target/classes started by joy in /home/joy/Documents/Works/Job Preperation/ibcs-primax/employee-salary-disbursment-poc/employee-salary-mgt)
+2024-01-01 18:30:44.278  INFO 16506 --- [restartedMain] c.i.s.SalaryApp                          : The following profiles are active: dev-joy
+2024-01-01 18:30:44.647  INFO 16506 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-01-01 18:30:44.651  INFO 16506 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-01-01 18:30:50.317  INFO 16506 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-01-01 18:30:51.071  INFO 16506 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 702 ms. Found 8 JPA repository interfaces.
+2024-01-01 18:30:53.296  INFO 16506 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@43d88d63' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2024-01-01 18:30:53.309  INFO 16506 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityConfig' of type [com.ibcs.salaryapp.secuirty.config.MethodSecurityConfig$$EnhancerBySpringCGLIB$$f7421f0d] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2024-01-01 18:30:53.379  INFO 16506 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2024-01-01 18:30:54.886  INFO 16506 --- [restartedMain] o.s.b.w.e.t.TomcatWebServer              : Tomcat initialized with port(s): 9090 (http)
+2024-01-01 18:30:54.937  INFO 16506 --- [restartedMain] o.a.c.c.StandardService                  : Starting service [Tomcat]
+2024-01-01 18:30:54.939  INFO 16506 --- [restartedMain] o.a.c.c.StandardEngine                   : Starting Servlet engine: [Apache Tomcat/9.0.55]
+2024-01-01 18:30:55.329  INFO 16506 --- [restartedMain] o.a.c.c.C.[.[.[/]                        : Initializing Spring embedded WebApplicationContext
+2024-01-01 18:30:55.330  INFO 16506 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 10671 ms
+2024-01-01 18:30:55.967  INFO 16506 --- [restartedMain] o.h.j.i.u.LogHelper                      : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-01-01 18:30:56.240  INFO 16506 --- [restartedMain] o.h.Version                              : HHH000412: Hibernate ORM core version 5.4.32.Final
+2024-01-01 18:30:56.900  INFO 16506 --- [restartedMain] o.h.a.c.Version                          : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2024-01-01 18:30:57.316  INFO 16506 --- [restartedMain] c.z.h.HikariDataSource                   : HikariPool-1 - Starting...
+2024-01-01 18:30:59.500  INFO 16506 --- [restartedMain] c.z.h.HikariDataSource                   : HikariPool-1 - Start completed.
+2024-01-01 18:30:59.573  INFO 16506 --- [restartedMain] o.h.d.Dialect                            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL94Dialect
+2024-01-01 18:31:02.981  INFO 16506 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2024-01-01 18:31:03.008  INFO 16506 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-01-01 18:31:06.824  WARN 16506 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-01-01 18:31:10.538  INFO 16506 --- [restartedMain] o.s.s.w.DefaultSecurityFilterChain       : Will secure Ant [pattern='/v2/api-docs'] with []
+2024-01-01 18:31:10.540  INFO 16506 --- [restartedMain] o.s.s.w.DefaultSecurityFilterChain       : Will secure Ant [pattern='/configuration/ui'] with []
+2024-01-01 18:31:10.542  INFO 16506 --- [restartedMain] o.s.s.w.DefaultSecurityFilterChain       : Will secure Ant [pattern='/swagger-resources/**'] with []
+2024-01-01 18:31:10.554  INFO 16506 --- [restartedMain] o.s.s.w.DefaultSecurityFilterChain       : Will secure Ant [pattern='/configuration/security'] with []
+2024-01-01 18:31:10.555  INFO 16506 --- [restartedMain] o.s.s.w.DefaultSecurityFilterChain       : Will secure Ant [pattern='/swagger-ui.html'] with []
+2024-01-01 18:31:10.557  INFO 16506 --- [restartedMain] o.s.s.w.DefaultSecurityFilterChain       : Will secure Ant [pattern='/webjars/**'] with []
+2024-01-01 18:31:10.560  INFO 16506 --- [restartedMain] o.s.s.w.DefaultSecurityFilterChain       : Will secure Ant [pattern='/authenticate', POST] with []
+2024-01-01 18:31:10.562  INFO 16506 --- [restartedMain] o.s.s.w.DefaultSecurityFilterChain       : Will secure Ant [pattern='/v1/user/login', POST] with []
+2024-01-01 18:31:10.837  INFO 16506 --- [restartedMain] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2024-01-01 18:31:11.637  INFO 16506 --- [restartedMain] o.s.s.w.DefaultSecurityFilterChain       : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@35d02562, org.springframework.security.web.context.SecurityContextPersistenceFilter@cd2f541, org.springframework.security.web.header.HeaderWriterFilter@46809171, org.springframework.web.filter.CorsFilter@2d358cef, org.springframework.security.web.authentication.logout.LogoutFilter@60d3f5cf, com.ibcs.salaryapp.secuirty.config.CustomAuthenticationFilter@22e37127, com.ibcs.salaryapp.secuirty.config.CustomAuthorizationFilter@4ac2888f, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7f5edd36, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4e4fa4ac, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7e0d5f80, org.springframework.security.web.session.SessionManagementFilter@1ee745d7, org.springframework.security.web.access.ExceptionTranslationFilter@3cac1cb4, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@116f34c0]
+2024-01-01 18:31:12.618  INFO 16506 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-01-01 18:31:14.613  INFO 16506 --- [restartedMain] o.s.b.w.e.t.TomcatWebServer              : Tomcat started on port(s): 9090 (http) with context path ''
+2024-01-01 18:31:14.636  INFO 16506 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2024-01-01 18:31:14.891  INFO 16506 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2024-01-01 18:31:15.234  INFO 16506 --- [restartedMain] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2024-01-01 18:31:16.904  INFO 16506 --- [restartedMain] c.i.s.SalaryApp                          : Started SalaryApp in 35.448 seconds (JVM running for 45.371)
+2024-01-01 18:31:49.058  INFO 16506 --- [http-nio-9090-exec-1] o.a.c.c.C.[.[.[/]                        : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-01-01 18:31:49.059  INFO 16506 --- [http-nio-9090-exec-1] o.s.w.s.DispatcherServlet                : Initializing Servlet 'dispatcherServlet'
+2024-01-01 18:31:49.080  INFO 16506 --- [http-nio-9090-exec-1] o.s.w.s.DispatcherServlet                : Completed initialization in 19 ms
+2024-01-01 18:31:53.103 ERROR 16506 --- [http-nio-9090-exec-2] c.i.s.s.c.CustomAuthenticationEntryPoint : Full authentication is required to access this resource >> /
+2024-01-01 18:31:53.208 ERROR 16506 --- [http-nio-9090-exec-5] c.i.s.s.c.CustomAuthenticationEntryPoint : Full authentication is required to access this resource >> /csrf
+2024-01-01 18:34:02.301  INFO 16506 --- [Thread-4] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-01-01 18:34:02.314  INFO 16506 --- [Thread-4] c.z.h.HikariDataSource                   : HikariPool-1 - Shutdown initiated...
+2024-01-01 18:34:02.414  INFO 16506 --- [Thread-4] c.z.h.HikariDataSource                   : HikariPool-1 - Shutdown completed.
+2024-01-01 18:34:02.729  INFO 16506 --- [restartedMain] c.i.s.SalaryApp                          : SalaryApp started successfully
+2024-01-01 18:34:03.194  INFO 16506 --- [restartedMain] c.i.s.SalaryApp                          : Starting SalaryApp using Java 14.0.2 on nemo with PID 16506 (/home/joy/Documents/Works/Job Preperation/ibcs-primax/employee-salary-disbursment-poc/employee-salary-mgt/target/classes started by joy in /home/joy/Documents/Works/Job Preperation/ibcs-primax/employee-salary-disbursment-poc/employee-salary-mgt)
+2024-01-01 18:34:03.195  INFO 16506 --- [restartedMain] c.i.s.SalaryApp                          : The following profiles are active: dev-joy
+2024-01-01 18:34:05.464  INFO 16506 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-01-01 18:34:05.771  INFO 16506 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 291 ms. Found 8 JPA repository interfaces.
+2024-01-01 18:34:06.305  INFO 16506 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@752579f7' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2024-01-01 18:34:06.309  INFO 16506 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityConfig' of type [com.ibcs.salaryapp.secuirty.config.MethodSecurityConfig$$EnhancerBySpringCGLIB$$f7421f0d] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2024-01-01 18:34:06.314  INFO 16506 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2024-01-01 18:34:06.792  INFO 16506 --- [restartedMain] o.s.b.w.e.t.TomcatWebServer              : Tomcat initialized with port(s): 9090 (http)
+2024-01-01 18:34:06.801  INFO 16506 --- [restartedMain] o.a.c.c.StandardService                  : Starting service [Tomcat]
+2024-01-01 18:34:06.810  INFO 16506 --- [restartedMain] o.a.c.c.StandardEngine                   : Starting Servlet engine: [Apache Tomcat/9.0.55]
+2024-01-01 18:34:06.918  INFO 16506 --- [restartedMain] o.a.c.c.C.[.[.[/]                        : Initializing Spring embedded WebApplicationContext
+2024-01-01 18:34:06.919  INFO 16506 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3708 ms
+2024-01-01 18:34:07.325  INFO 16506 --- [restartedMain] o.h.j.i.u.LogHelper                      : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-01-01 18:34:07.363  INFO 16506 --- [restartedMain] c.z.h.HikariDataSource                   : HikariPool-2 - Starting...
+2024-01-01 18:34:07.524  INFO 16506 --- [restartedMain] c.z.h.HikariDataSource                   : HikariPool-2 - Start completed.
+2024-01-01 18:34:07.525  INFO 16506 --- [restartedMain] o.h.d.Dialect                            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL94Dialect
+2024-01-01 18:34:09.195  INFO 16506 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2024-01-01 18:34:09.197  INFO 16506 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-01-01 18:34:10.670  WARN 16506 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-01-01 18:34:11.231  INFO 16506 --- [restartedMain] o.s.s.w.DefaultSecurityFilterChain       : Will secure Ant [pattern='/v2/api-docs'] with []
+2024-01-01 18:34:11.232  INFO 16506 --- [restartedMain] o.s.s.w.DefaultSecurityFilterChain       : Will secure Ant [pattern='/configuration/ui'] with []
+2024-01-01 18:34:11.233  INFO 16506 --- [restartedMain] o.s.s.w.DefaultSecurityFilterChain       : Will secure Ant [pattern='/swagger-resources/**'] with []
+2024-01-01 18:34:11.234  INFO 16506 --- [restartedMain] o.s.s.w.DefaultSecurityFilterChain       : Will secure Ant [pattern='/configuration/security'] with []
+2024-01-01 18:34:11.235  INFO 16506 --- [restartedMain] o.s.s.w.DefaultSecurityFilterChain       : Will secure Ant [pattern='/swagger-ui.html'] with []
+2024-01-01 18:34:11.236  INFO 16506 --- [restartedMain] o.s.s.w.DefaultSecurityFilterChain       : Will secure Ant [pattern='/webjars/**'] with []
+2024-01-01 18:34:11.237  INFO 16506 --- [restartedMain] o.s.s.w.DefaultSecurityFilterChain       : Will secure Ant [pattern='/authenticate', POST] with []
+2024-01-01 18:34:11.237  INFO 16506 --- [restartedMain] o.s.s.w.DefaultSecurityFilterChain       : Will secure Ant [pattern='/v1/user/login', POST] with []
+2024-01-01 18:34:11.274  INFO 16506 --- [restartedMain] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2024-01-01 18:34:11.422  INFO 16506 --- [restartedMain] o.s.s.w.DefaultSecurityFilterChain       : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@680f3eca, org.springframework.security.web.context.SecurityContextPersistenceFilter@7ef80dbf, org.springframework.security.web.header.HeaderWriterFilter@4d5bd00a, org.springframework.web.filter.CorsFilter@7584d9df, org.springframework.security.web.authentication.logout.LogoutFilter@28cb47ba, com.ibcs.salaryapp.secuirty.config.CustomAuthenticationFilter@c7ee86e, com.ibcs.salaryapp.secuirty.config.CustomAuthorizationFilter@7cc5f3ce, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@67fef88, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1537a4cd, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6d2d6bf2, org.springframework.security.web.session.SessionManagementFilter@4568c780, org.springframework.security.web.access.ExceptionTranslationFilter@1a6c427a, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@71c0316e]
+2024-01-01 18:34:11.556  INFO 16506 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-01-01 18:34:11.861  INFO 16506 --- [restartedMain] o.s.b.w.e.t.TomcatWebServer              : Tomcat started on port(s): 9090 (http) with context path ''
+2024-01-01 18:34:11.863  INFO 16506 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2024-01-01 18:34:11.866  INFO 16506 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2024-01-01 18:34:11.883  INFO 16506 --- [restartedMain] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2024-01-01 18:34:12.197  INFO 16506 --- [restartedMain] c.i.s.SalaryApp                          : Started SalaryApp in 9.437 seconds (JVM running for 220.664)
+2024-01-01 18:34:12.207  INFO 16506 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2024-01-01 18:34:15.383  INFO 16506 --- [http-nio-9090-exec-1] o.a.c.c.C.[.[.[/]                        : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-01-01 18:34:15.385  INFO 16506 --- [http-nio-9090-exec-1] o.s.w.s.DispatcherServlet                : Initializing Servlet 'dispatcherServlet'
+2024-01-01 18:34:15.418  INFO 16506 --- [http-nio-9090-exec-1] o.s.w.s.DispatcherServlet                : Completed initialization in 27 ms
+2024-01-01 18:34:17.240 ERROR 16506 --- [http-nio-9090-exec-2] c.i.s.s.c.CustomAuthenticationEntryPoint : Full authentication is required to access this resource >> /
+2024-01-01 18:34:17.303 ERROR 16506 --- [http-nio-9090-exec-3] c.i.s.s.c.CustomAuthenticationEntryPoint : Full authentication is required to access this resource >> /csrf
+2024-01-01 18:43:19.136  INFO 16506 --- [Thread-7] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-01-01 18:43:19.146  INFO 16506 --- [Thread-7] c.z.h.HikariDataSource                   : HikariPool-2 - Shutdown initiated...
+2024-01-01 18:43:19.273  INFO 16506 --- [Thread-7] c.z.h.HikariDataSource                   : HikariPool-2 - Shutdown completed.
+2024-01-01 18:57:22.756  INFO 18422 --- [restartedMain] c.i.s.SalaryApp                          : Starting SalaryApp using Java 14.0.2 on nemo with PID 18422 (/home/joy/Documents/Works/Job Preperation/ibcs-primax/employee-salary-disbursment-poc/employee-salary-mgt/target/classes started by joy in /home/joy/Documents/Works/Job Preperation/ibcs-primax/employee-salary-disbursment-poc/employee-salary-mgt)
+2024-01-01 18:57:22.833  INFO 18422 --- [restartedMain] c.i.s.SalaryApp                          : The following profiles are active: dev-joy
+2024-01-01 18:57:23.156  INFO 18422 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-01-01 18:57:23.157  INFO 18422 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-01-01 18:57:28.228  INFO 18422 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-01-01 18:57:28.682  INFO 18422 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 423 ms. Found 8 JPA repository interfaces.
+2024-01-01 18:57:30.668  INFO 18422 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@1d975a19' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2024-01-01 18:57:30.675  INFO 18422 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityConfig' of type [com.ibcs.salaryapp.secuirty.config.MethodSecurityConfig$$EnhancerBySpringCGLIB$$bf3615e8] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2024-01-01 18:57:30.704  INFO 18422 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2024-01-01 18:57:32.273  INFO 18422 --- [restartedMain] o.s.b.w.e.t.TomcatWebServer              : Tomcat initialized with port(s): 9090 (http)
+2024-01-01 18:57:32.315  INFO 18422 --- [restartedMain] o.a.c.c.StandardService                  : Starting service [Tomcat]
+2024-01-01 18:57:32.317  INFO 18422 --- [restartedMain] o.a.c.c.StandardEngine                   : Starting Servlet engine: [Apache Tomcat/9.0.55]
+2024-01-01 18:57:32.755  INFO 18422 --- [restartedMain] o.a.c.c.C.[.[.[/]                        : Initializing Spring embedded WebApplicationContext
+2024-01-01 18:57:32.756  INFO 18422 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 9582 ms
+2024-01-01 18:57:33.639  INFO 18422 --- [restartedMain] o.h.j.i.u.LogHelper                      : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-01-01 18:57:33.827  INFO 18422 --- [restartedMain] o.h.Version                              : HHH000412: Hibernate ORM core version 5.4.32.Final
+2024-01-01 18:57:34.407  INFO 18422 --- [restartedMain] o.h.a.c.Version                          : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2024-01-01 18:57:34.842  INFO 18422 --- [restartedMain] c.z.h.HikariDataSource                   : HikariPool-1 - Starting...
+2024-01-01 18:57:37.188  INFO 18422 --- [restartedMain] c.z.h.HikariDataSource                   : HikariPool-1 - Start completed.
+2024-01-01 18:57:37.249  INFO 18422 --- [restartedMain] o.h.d.Dialect                            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL94Dialect
+2024-01-01 18:57:43.463  INFO 18422 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2024-01-01 18:57:43.569  INFO 18422 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-01-01 18:57:47.721  WARN 18422 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-01-01 18:57:51.067  INFO 18422 --- [restartedMain] o.s.s.w.DefaultSecurityFilterChain       : Will secure Ant [pattern='/v2/api-docs'] with []
+2024-01-01 18:57:51.069  INFO 18422 --- [restartedMain] o.s.s.w.DefaultSecurityFilterChain       : Will secure Ant [pattern='/configuration/ui'] with []
+2024-01-01 18:57:51.070  INFO 18422 --- [restartedMain] o.s.s.w.DefaultSecurityFilterChain       : Will secure Ant [pattern='/swagger-resources/**'] with []
+2024-01-01 18:57:51.083  INFO 18422 --- [restartedMain] o.s.s.w.DefaultSecurityFilterChain       : Will secure Ant [pattern='/configuration/security'] with []
+2024-01-01 18:57:51.089  INFO 18422 --- [restartedMain] o.s.s.w.DefaultSecurityFilterChain       : Will secure Ant [pattern='/swagger-ui.html'] with []
+2024-01-01 18:57:51.090  INFO 18422 --- [restartedMain] o.s.s.w.DefaultSecurityFilterChain       : Will secure Ant [pattern='/webjars/**'] with []
+2024-01-01 18:57:51.093  INFO 18422 --- [restartedMain] o.s.s.w.DefaultSecurityFilterChain       : Will secure Ant [pattern='/authenticate', POST] with []
+2024-01-01 18:57:51.098  INFO 18422 --- [restartedMain] o.s.s.w.DefaultSecurityFilterChain       : Will secure Ant [pattern='/v1/user/login', POST] with []
+2024-01-01 18:57:51.347  INFO 18422 --- [restartedMain] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2024-01-01 18:57:52.375  INFO 18422 --- [restartedMain] o.s.s.w.DefaultSecurityFilterChain       : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@21e04b88, org.springframework.security.web.context.SecurityContextPersistenceFilter@179825d9, org.springframework.security.web.header.HeaderWriterFilter@5c58c0a5, org.springframework.web.filter.CorsFilter@59caa747, org.springframework.security.web.authentication.logout.LogoutFilter@28f2dff3, com.ibcs.salaryapp.secuirty.config.CustomAuthenticationFilter@5743633e, com.ibcs.salaryapp.secuirty.config.CustomAuthorizationFilter@46c736cf, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5ef8f885, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@90f10c9, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@65d88994, org.springframework.security.web.session.SessionManagementFilter@14ab0958, org.springframework.security.web.access.ExceptionTranslationFilter@25e4f5f8, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@b0352d3]
+2024-01-01 18:57:52.937  INFO 18422 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-01-01 18:57:53.971  INFO 18422 --- [restartedMain] o.s.b.w.e.t.TomcatWebServer              : Tomcat started on port(s): 9090 (http) with context path ''
+2024-01-01 18:57:53.977  INFO 18422 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2024-01-01 18:57:54.054  INFO 18422 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2024-01-01 18:57:54.169  INFO 18422 --- [restartedMain] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2024-01-01 18:57:55.017  INFO 18422 --- [restartedMain] c.i.s.SalaryApp                          : Started SalaryApp in 35.144 seconds (JVM running for 43.651)
+2024-01-01 18:58:03.918  INFO 18422 --- [http-nio-9090-exec-1] o.a.c.c.C.[.[.[/]                        : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-01-01 18:58:03.934  INFO 18422 --- [http-nio-9090-exec-1] o.s.w.s.DispatcherServlet                : Initializing Servlet 'dispatcherServlet'
+2024-01-01 18:58:03.945  INFO 18422 --- [http-nio-9090-exec-1] o.s.w.s.DispatcherServlet                : Completed initialization in 8 ms
+2024-01-01 18:58:08.554 ERROR 18422 --- [http-nio-9090-exec-1] c.i.s.s.c.CustomAuthenticationEntryPoint : Full authentication is required to access this resource >> /
+2024-01-01 18:58:08.773 ERROR 18422 --- [http-nio-9090-exec-4] c.i.s.s.c.CustomAuthenticationEntryPoint : Full authentication is required to access this resource >> /csrf
+2024-01-01 18:58:23.395 ERROR 18422 --- [http-nio-9090-exec-3] c.i.s.s.c.CustomAuthenticationEntryPoint : Full authentication is required to access this resource >> /v1/salary/employee-salary
+2024-01-01 18:58:55.150  INFO 18422 --- [http-nio-9090-exec-7] c.i.s.c.SalaryCtrl                       : inside getEmployeeSalaryDetails API
+2024-01-01 18:58:55.464 ERROR 18422 --- [http-nio-9090-exec-7] c.i.s.s.e.RestErrorHandler               : A TupleBackedMap cannot be modified.
+
+java.lang.UnsupportedOperationException: A TupleBackedMap cannot be modified.
+	at org.springframework.data.jpa.repository.query.AbstractJpaQuery$TupleConverter$TupleBackedMap.put(AbstractJpaQuery.java:407) ~[spring-data-jpa-2.5.7.jar:2.5.7]
+	at org.springframework.data.jpa.repository.query.AbstractJpaQuery$TupleConverter$TupleBackedMap.put(AbstractJpaQuery.java:340) ~[spring-data-jpa-2.5.7.jar:2.5.7]
+	at org.springframework.data.projection.MapAccessingMethodInterceptor.invoke(MapAccessingMethodInterceptor.java:65) ~[spring-data-commons-2.5.7.jar:2.5.7]
+	at org.springframework.data.projection.ProjectingMethodInterceptor.invoke(ProjectingMethodInterceptor.java:76) ~[spring-data-commons-2.5.7.jar:2.5.7]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.13.jar:5.3.13]
+	at org.springframework.data.projection.ProxyProjectionFactory$TargetAwareMethodInterceptor.invoke(ProxyProjectionFactory.java:253) ~[spring-data-commons-2.5.7.jar:2.5.7]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.13.jar:5.3.13]
+	at org.springframework.data.projection.DefaultMethodInvokingMethodInterceptor.invoke(DefaultMethodInvokingMethodInterceptor.java:80) ~[spring-data-commons-2.5.7.jar:2.5.7]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.13.jar:5.3.13]
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:215) ~[spring-aop-5.3.13.jar:5.3.13]
+	at com.sun.proxy.$Proxy193.setSalary(Unknown Source) ~[?:?]
+	at com.ibcs.salaryapp.service.salary.SalaryServiceImpl.lambda$getEmployeeSalaryDetails$0(SalaryServiceImpl.java:87) ~[classes/:?]
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195) ~[?:?]
+	at java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1625) ~[?:?]
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484) ~[?:?]
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474) ~[?:?]
+	at java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:913) ~[?:?]
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234) ~[?:?]
+	at java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:578) ~[?:?]
+	at com.ibcs.salaryapp.service.salary.SalaryServiceImpl.getEmployeeSalaryDetails(SalaryServiceImpl.java:89) ~[classes/:?]
+	at com.ibcs.salaryapp.service.salary.SalaryServiceImpl$$FastClassBySpringCGLIB$$fd2fa86f.invoke(<generated>) ~[classes/:?]
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218) ~[spring-core-5.3.13.jar:5.3.13]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:689) ~[spring-aop-5.3.13.jar:5.3.13]
+	at com.ibcs.salaryapp.service.salary.SalaryServiceImpl$$EnhancerBySpringCGLIB$$af7c51c6.getEmployeeSalaryDetails(<generated>) ~[classes/:?]
+	at com.ibcs.salaryapp.controllers.SalaryCtrl.getEmployeeSalaryDetails(SalaryCtrl.java:46) ~[classes/:?]
+	at com.ibcs.salaryapp.controllers.SalaryCtrl$$FastClassBySpringCGLIB$$7a13007b.invoke(<generated>) ~[classes/:?]
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218) ~[spring-core-5.3.13.jar:5.3.13]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:783) ~[spring-aop-5.3.13.jar:5.3.13]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-5.3.13.jar:5.3.13]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:753) ~[spring-aop-5.3.13.jar:5.3.13]
+	at org.springframework.validation.beanvalidation.MethodValidationInterceptor.invoke(MethodValidationInterceptor.java:123) ~[spring-context-5.3.13.jar:5.3.13]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.13.jar:5.3.13]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:753) ~[spring-aop-5.3.13.jar:5.3.13]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:698) ~[spring-aop-5.3.13.jar:5.3.13]
+	at com.ibcs.salaryapp.controllers.SalaryCtrl$$EnhancerBySpringCGLIB$$80e0ab3e.getEmployeeSalaryDetails(<generated>) ~[classes/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:564) ~[?:?]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205) ~[spring-web-5.3.13.jar:5.3.13]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150) ~[spring-web-5.3.13.jar:5.3.13]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117) ~[spring-webmvc-5.3.13.jar:5.3.13]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895) ~[spring-webmvc-5.3.13.jar:5.3.13]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808) ~[spring-webmvc-5.3.13.jar:5.3.13]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.3.13.jar:5.3.13]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067) [spring-webmvc-5.3.13.jar:5.3.13]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963) [spring-webmvc-5.3.13.jar:5.3.13]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) [spring-webmvc-5.3.13.jar:5.3.13]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) [spring-webmvc-5.3.13.jar:5.3.13]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:655) [tomcat-embed-core-9.0.55.jar:4.0.FR]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) [spring-webmvc-5.3.13.jar:5.3.13]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764) [tomcat-embed-core-9.0.55.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227) [tomcat-embed-core-9.0.55.jar:9.0.55]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [tomcat-embed-core-9.0.55.jar:9.0.55]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) [tomcat-embed-websocket-9.0.55.jar:9.0.55]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) [tomcat-embed-core-9.0.55.jar:9.0.55]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [tomcat-embed-core-9.0.55.jar:9.0.55]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:327) [spring-security-web-5.5.3.jar:5.5.3]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:115) [spring-security-web-5.5.3.jar:5.5.3]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:81) [spring-security-web-5.5.3.jar:5.5.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) [spring-security-web-5.5.3.jar:5.5.3]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:121) [spring-security-web-5.5.3.jar:5.5.3]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:115) [spring-security-web-5.5.3.jar:5.5.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) [spring-security-web-5.5.3.jar:5.5.3]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:126) [spring-security-web-5.5.3.jar:5.5.3]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:81) [spring-security-web-5.5.3.jar:5.5.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) [spring-security-web-5.5.3.jar:5.5.3]
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:105) [spring-security-web-5.5.3.jar:5.5.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) [spring-security-web-5.5.3.jar:5.5.3]
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:149) [spring-security-web-5.5.3.jar:5.5.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) [spring-security-web-5.5.3.jar:5.5.3]
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63) [spring-security-web-5.5.3.jar:5.5.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) [spring-security-web-5.5.3.jar:5.5.3]
+	at com.ibcs.salaryapp.secuirty.config.CustomAuthorizationFilter.doFilterInternal(CustomAuthorizationFilter.java:57) [classes/:?]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.3.13.jar:5.3.13]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) [spring-security-web-5.5.3.jar:5.5.3]
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:218) [spring-security-web-5.5.3.jar:5.5.3]
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:212) [spring-security-web-5.5.3.jar:5.5.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) [spring-security-web-5.5.3.jar:5.5.3]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:103) [spring-security-web-5.5.3.jar:5.5.3]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:89) [spring-security-web-5.5.3.jar:5.5.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) [spring-security-web-5.5.3.jar:5.5.3]
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91) [spring-web-5.3.13.jar:5.3.13]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.3.13.jar:5.3.13]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) [spring-security-web-5.5.3.jar:5.5.3]
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90) [spring-security-web-5.5.3.jar:5.5.3]
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75) [spring-security-web-5.5.3.jar:5.5.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.3.13.jar:5.3.13]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) [spring-security-web-5.5.3.jar:5.5.3]
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:110) [spring-security-web-5.5.3.jar:5.5.3]
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:80) [spring-security-web-5.5.3.jar:5.5.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) [spring-security-web-5.5.3.jar:5.5.3]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:55) [spring-security-web-5.5.3.jar:5.5.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.3.13.jar:5.3.13]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) [spring-security-web-5.5.3.jar:5.5.3]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:211) [spring-security-web-5.5.3.jar:5.5.3]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:183) [spring-security-web-5.5.3.jar:5.5.3]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358) [spring-web-5.3.13.jar:5.3.13]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271) [spring-web-5.3.13.jar:5.3.13]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) [tomcat-embed-core-9.0.55.jar:9.0.55]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [tomcat-embed-core-9.0.55.jar:9.0.55]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) [spring-web-5.3.13.jar:5.3.13]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.3.13.jar:5.3.13]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) [tomcat-embed-core-9.0.55.jar:9.0.55]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [tomcat-embed-core-9.0.55.jar:9.0.55]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) [spring-web-5.3.13.jar:5.3.13]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.3.13.jar:5.3.13]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) [tomcat-embed-core-9.0.55.jar:9.0.55]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [tomcat-embed-core-9.0.55.jar:9.0.55]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) [spring-web-5.3.13.jar:5.3.13]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.3.13.jar:5.3.13]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) [tomcat-embed-core-9.0.55.jar:9.0.55]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [tomcat-embed-core-9.0.55.jar:9.0.55]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197) [tomcat-embed-core-9.0.55.jar:9.0.55]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) [tomcat-embed-core-9.0.55.jar:9.0.55]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:540) [tomcat-embed-core-9.0.55.jar:9.0.55]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135) [tomcat-embed-core-9.0.55.jar:9.0.55]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.55.jar:9.0.55]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) [tomcat-embed-core-9.0.55.jar:9.0.55]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357) [tomcat-embed-core-9.0.55.jar:9.0.55]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:382) [tomcat-embed-core-9.0.55.jar:9.0.55]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.55.jar:9.0.55]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:895) [tomcat-embed-core-9.0.55.jar:9.0.55]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1722) [tomcat-embed-core-9.0.55.jar:9.0.55]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.55.jar:9.0.55]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) [tomcat-embed-core-9.0.55.jar:9.0.55]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) [tomcat-embed-core-9.0.55.jar:9.0.55]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.55.jar:9.0.55]
+	at java.lang.Thread.run(Thread.java:832) [?:?]
+
+2024-01-01 18:58:55.657  WARN 18422 --- [http-nio-9090-exec-7] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [java.lang.UnsupportedOperationException: A TupleBackedMap cannot be modified.]
+2024-01-01 19:02:06.274  INFO 18599 --- [restartedMain] c.i.s.SalaryApp                          : Starting SalaryApp using Java 14.0.2 on nemo with PID 18599 (/home/joy/Documents/Works/Job Preperation/ibcs-primax/employee-salary-disbursment-poc/employee-salary-mgt/target/classes started by joy in /home/joy/Documents/Works/Job Preperation/ibcs-primax/employee-salary-disbursment-poc/employee-salary-mgt)
+2024-01-01 19:02:06.298  INFO 18599 --- [restartedMain] c.i.s.SalaryApp                          : The following profiles are active: dev-joy
+2024-01-01 19:02:06.678  INFO 18599 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-01-01 19:02:06.679  INFO 18599 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-01-01 19:02:11.744  INFO 18599 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-01-01 19:02:12.645  INFO 18599 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 873 ms. Found 8 JPA repository interfaces.
+2024-01-01 19:02:14.804  INFO 18599 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@60f53573' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2024-01-01 19:02:14.819  INFO 18599 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityConfig' of type [com.ibcs.salaryapp.secuirty.config.MethodSecurityConfig$$EnhancerBySpringCGLIB$$7c7248d3] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2024-01-01 19:02:14.849  INFO 18599 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2024-01-01 19:02:16.242  INFO 18599 --- [restartedMain] o.s.b.w.e.t.TomcatWebServer              : Tomcat initialized with port(s): 9090 (http)
+2024-01-01 19:02:16.278  INFO 18599 --- [restartedMain] o.a.c.c.StandardService                  : Starting service [Tomcat]
+2024-01-01 19:02:16.280  INFO 18599 --- [restartedMain] o.a.c.c.StandardEngine                   : Starting Servlet engine: [Apache Tomcat/9.0.55]
+2024-01-01 19:02:16.889  INFO 18599 --- [restartedMain] o.a.c.c.C.[.[.[/]                        : Initializing Spring embedded WebApplicationContext
+2024-01-01 19:02:16.894  INFO 18599 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 10190 ms
+2024-01-01 19:02:17.906  INFO 18599 --- [restartedMain] o.h.j.i.u.LogHelper                      : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-01-01 19:02:18.246  INFO 18599 --- [restartedMain] o.h.Version                              : HHH000412: Hibernate ORM core version 5.4.32.Final
+2024-01-01 19:02:19.146  INFO 18599 --- [restartedMain] o.h.a.c.Version                          : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2024-01-01 19:02:19.612  INFO 18599 --- [restartedMain] c.z.h.HikariDataSource                   : HikariPool-1 - Starting...
+2024-01-01 19:02:21.296  INFO 18599 --- [restartedMain] c.z.h.HikariDataSource                   : HikariPool-1 - Start completed.
+2024-01-01 19:02:21.354  INFO 18599 --- [restartedMain] o.h.d.Dialect                            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL94Dialect
+2024-01-01 19:02:24.787  INFO 18599 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2024-01-01 19:02:24.899  INFO 18599 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-01-01 19:02:29.144  WARN 18599 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-01-01 19:02:31.695  INFO 18599 --- [restartedMain] o.s.s.w.DefaultSecurityFilterChain       : Will secure Ant [pattern='/v2/api-docs'] with []
+2024-01-01 19:02:31.698  INFO 18599 --- [restartedMain] o.s.s.w.DefaultSecurityFilterChain       : Will secure Ant [pattern='/configuration/ui'] with []
+2024-01-01 19:02:31.699  INFO 18599 --- [restartedMain] o.s.s.w.DefaultSecurityFilterChain       : Will secure Ant [pattern='/swagger-resources/**'] with []
+2024-01-01 19:02:31.708  INFO 18599 --- [restartedMain] o.s.s.w.DefaultSecurityFilterChain       : Will secure Ant [pattern='/configuration/security'] with []
+2024-01-01 19:02:31.709  INFO 18599 --- [restartedMain] o.s.s.w.DefaultSecurityFilterChain       : Will secure Ant [pattern='/swagger-ui.html'] with []
+2024-01-01 19:02:31.718  INFO 18599 --- [restartedMain] o.s.s.w.DefaultSecurityFilterChain       : Will secure Ant [pattern='/webjars/**'] with []
+2024-01-01 19:02:31.719  INFO 18599 --- [restartedMain] o.s.s.w.DefaultSecurityFilterChain       : Will secure Ant [pattern='/authenticate', POST] with []
+2024-01-01 19:02:31.720  INFO 18599 --- [restartedMain] o.s.s.w.DefaultSecurityFilterChain       : Will secure Ant [pattern='/v1/user/login', POST] with []
+2024-01-01 19:02:31.866  INFO 18599 --- [restartedMain] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2024-01-01 19:02:32.311  INFO 18599 --- [restartedMain] o.s.s.w.DefaultSecurityFilterChain       : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@c3953a0, org.springframework.security.web.context.SecurityContextPersistenceFilter@9ff1075, org.springframework.security.web.header.HeaderWriterFilter@69d39ba9, org.springframework.web.filter.CorsFilter@45cb6edb, org.springframework.security.web.authentication.logout.LogoutFilter@aa42959, com.ibcs.salaryapp.secuirty.config.CustomAuthenticationFilter@5e27f1e3, com.ibcs.salaryapp.secuirty.config.CustomAuthorizationFilter@5e3fa2dd, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@15297eae, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@12f31d09, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@18dd4ee9, org.springframework.security.web.session.SessionManagementFilter@6e3d169c, org.springframework.security.web.access.ExceptionTranslationFilter@44fc1de3, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@4819103a]
+2024-01-01 19:02:32.808  INFO 18599 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-01-01 19:02:33.872  INFO 18599 --- [restartedMain] o.s.b.w.e.t.TomcatWebServer              : Tomcat started on port(s): 9090 (http) with context path ''
+2024-01-01 19:02:33.884  INFO 18599 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2024-01-01 19:02:33.989  INFO 18599 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2024-01-01 19:02:34.070  INFO 18599 --- [restartedMain] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2024-01-01 19:02:34.889  INFO 18599 --- [restartedMain] c.i.s.SalaryApp                          : Started SalaryApp in 30.67 seconds (JVM running for 36.478)
+2024-01-01 19:02:42.810  INFO 18599 --- [http-nio-9090-exec-1] o.a.c.c.C.[.[.[/]                        : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-01-01 19:02:42.811  INFO 18599 --- [http-nio-9090-exec-1] o.s.w.s.DispatcherServlet                : Initializing Servlet 'dispatcherServlet'
+2024-01-01 19:02:42.823  INFO 18599 --- [http-nio-9090-exec-1] o.s.w.s.DispatcherServlet                : Completed initialization in 11 ms
+2024-01-01 19:02:44.882  INFO 18599 --- [http-nio-9090-exec-1] c.i.s.c.SalaryCtrl                       : inside getEmployeeSalaryDetails API
+2024-01-01 19:02:45.139 ERROR 18599 --- [http-nio-9090-exec-1] c.i.s.s.e.RestErrorHandler               : A TupleBackedMap cannot be modified.
+
+java.lang.UnsupportedOperationException: A TupleBackedMap cannot be modified.
+	at org.springframework.data.jpa.repository.query.AbstractJpaQuery$TupleConverter$TupleBackedMap.put(AbstractJpaQuery.java:407) ~[spring-data-jpa-2.5.7.jar:2.5.7]
+	at org.springframework.data.jpa.repository.query.AbstractJpaQuery$TupleConverter$TupleBackedMap.put(AbstractJpaQuery.java:340) ~[spring-data-jpa-2.5.7.jar:2.5.7]
+	at org.springframework.data.projection.MapAccessingMethodInterceptor.invoke(MapAccessingMethodInterceptor.java:65) ~[spring-data-commons-2.5.7.jar:2.5.7]
+	at org.springframework.data.projection.ProjectingMethodInterceptor.invoke(ProjectingMethodInterceptor.java:76) ~[spring-data-commons-2.5.7.jar:2.5.7]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.13.jar:5.3.13]
+	at org.springframework.data.projection.ProxyProjectionFactory$TargetAwareMethodInterceptor.invoke(ProxyProjectionFactory.java:253) ~[spring-data-commons-2.5.7.jar:2.5.7]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.13.jar:5.3.13]
+	at org.springframework.data.projection.DefaultMethodInvokingMethodInterceptor.invoke(DefaultMethodInvokingMethodInterceptor.java:80) ~[spring-data-commons-2.5.7.jar:2.5.7]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.13.jar:5.3.13]
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:215) ~[spring-aop-5.3.13.jar:5.3.13]
+	at com.sun.proxy.$Proxy177.setSalary(Unknown Source) ~[?:?]
+	at com.ibcs.salaryapp.service.salary.SalaryServiceImpl.getEmployeeSalaryDetails(SalaryServiceImpl.java:93) ~[classes/:?]
+	at com.ibcs.salaryapp.service.salary.SalaryServiceImpl$$FastClassBySpringCGLIB$$fd2fa86f.invoke(<generated>) ~[classes/:?]
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218) ~[spring-core-5.3.13.jar:5.3.13]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:689) ~[spring-aop-5.3.13.jar:5.3.13]
+	at com.ibcs.salaryapp.service.salary.SalaryServiceImpl$$EnhancerBySpringCGLIB$$16b5ae6a.getEmployeeSalaryDetails(<generated>) ~[classes/:?]
+	at com.ibcs.salaryapp.controllers.SalaryCtrl.getEmployeeSalaryDetails(SalaryCtrl.java:46) ~[classes/:?]
+	at com.ibcs.salaryapp.controllers.SalaryCtrl$$FastClassBySpringCGLIB$$7a13007b.invoke(<generated>) ~[classes/:?]
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218) ~[spring-core-5.3.13.jar:5.3.13]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:783) ~[spring-aop-5.3.13.jar:5.3.13]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-5.3.13.jar:5.3.13]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:753) ~[spring-aop-5.3.13.jar:5.3.13]
+	at org.springframework.validation.beanvalidation.MethodValidationInterceptor.invoke(MethodValidationInterceptor.java:123) ~[spring-context-5.3.13.jar:5.3.13]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.13.jar:5.3.13]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:753) ~[spring-aop-5.3.13.jar:5.3.13]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:698) ~[spring-aop-5.3.13.jar:5.3.13]
+	at com.ibcs.salaryapp.controllers.SalaryCtrl$$EnhancerBySpringCGLIB$$bd57011c.getEmployeeSalaryDetails(<generated>) ~[classes/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:564) ~[?:?]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205) ~[spring-web-5.3.13.jar:5.3.13]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150) ~[spring-web-5.3.13.jar:5.3.13]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117) ~[spring-webmvc-5.3.13.jar:5.3.13]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895) ~[spring-webmvc-5.3.13.jar:5.3.13]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808) ~[spring-webmvc-5.3.13.jar:5.3.13]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.3.13.jar:5.3.13]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067) [spring-webmvc-5.3.13.jar:5.3.13]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963) [spring-webmvc-5.3.13.jar:5.3.13]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) [spring-webmvc-5.3.13.jar:5.3.13]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) [spring-webmvc-5.3.13.jar:5.3.13]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:655) [tomcat-embed-core-9.0.55.jar:4.0.FR]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) [spring-webmvc-5.3.13.jar:5.3.13]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764) [tomcat-embed-core-9.0.55.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227) [tomcat-embed-core-9.0.55.jar:9.0.55]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [tomcat-embed-core-9.0.55.jar:9.0.55]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) [tomcat-embed-websocket-9.0.55.jar:9.0.55]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) [tomcat-embed-core-9.0.55.jar:9.0.55]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [tomcat-embed-core-9.0.55.jar:9.0.55]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:327) [spring-security-web-5.5.3.jar:5.5.3]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:115) [spring-security-web-5.5.3.jar:5.5.3]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:81) [spring-security-web-5.5.3.jar:5.5.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) [spring-security-web-5.5.3.jar:5.5.3]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:121) [spring-security-web-5.5.3.jar:5.5.3]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:115) [spring-security-web-5.5.3.jar:5.5.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) [spring-security-web-5.5.3.jar:5.5.3]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:126) [spring-security-web-5.5.3.jar:5.5.3]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:81) [spring-security-web-5.5.3.jar:5.5.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) [spring-security-web-5.5.3.jar:5.5.3]
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:105) [spring-security-web-5.5.3.jar:5.5.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) [spring-security-web-5.5.3.jar:5.5.3]
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:149) [spring-security-web-5.5.3.jar:5.5.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) [spring-security-web-5.5.3.jar:5.5.3]
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63) [spring-security-web-5.5.3.jar:5.5.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) [spring-security-web-5.5.3.jar:5.5.3]
+	at com.ibcs.salaryapp.secuirty.config.CustomAuthorizationFilter.doFilterInternal(CustomAuthorizationFilter.java:57) [classes/:?]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.3.13.jar:5.3.13]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) [spring-security-web-5.5.3.jar:5.5.3]
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:218) [spring-security-web-5.5.3.jar:5.5.3]
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:212) [spring-security-web-5.5.3.jar:5.5.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) [spring-security-web-5.5.3.jar:5.5.3]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:103) [spring-security-web-5.5.3.jar:5.5.3]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:89) [spring-security-web-5.5.3.jar:5.5.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) [spring-security-web-5.5.3.jar:5.5.3]
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91) [spring-web-5.3.13.jar:5.3.13]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.3.13.jar:5.3.13]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) [spring-security-web-5.5.3.jar:5.5.3]
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90) [spring-security-web-5.5.3.jar:5.5.3]
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75) [spring-security-web-5.5.3.jar:5.5.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.3.13.jar:5.3.13]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) [spring-security-web-5.5.3.jar:5.5.3]
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:110) [spring-security-web-5.5.3.jar:5.5.3]
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:80) [spring-security-web-5.5.3.jar:5.5.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) [spring-security-web-5.5.3.jar:5.5.3]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:55) [spring-security-web-5.5.3.jar:5.5.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.3.13.jar:5.3.13]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) [spring-security-web-5.5.3.jar:5.5.3]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:211) [spring-security-web-5.5.3.jar:5.5.3]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:183) [spring-security-web-5.5.3.jar:5.5.3]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358) [spring-web-5.3.13.jar:5.3.13]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271) [spring-web-5.3.13.jar:5.3.13]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) [tomcat-embed-core-9.0.55.jar:9.0.55]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [tomcat-embed-core-9.0.55.jar:9.0.55]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) [spring-web-5.3.13.jar:5.3.13]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.3.13.jar:5.3.13]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) [tomcat-embed-core-9.0.55.jar:9.0.55]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [tomcat-embed-core-9.0.55.jar:9.0.55]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) [spring-web-5.3.13.jar:5.3.13]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.3.13.jar:5.3.13]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) [tomcat-embed-core-9.0.55.jar:9.0.55]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [tomcat-embed-core-9.0.55.jar:9.0.55]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) [spring-web-5.3.13.jar:5.3.13]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.3.13.jar:5.3.13]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) [tomcat-embed-core-9.0.55.jar:9.0.55]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [tomcat-embed-core-9.0.55.jar:9.0.55]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197) [tomcat-embed-core-9.0.55.jar:9.0.55]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) [tomcat-embed-core-9.0.55.jar:9.0.55]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:540) [tomcat-embed-core-9.0.55.jar:9.0.55]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135) [tomcat-embed-core-9.0.55.jar:9.0.55]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.55.jar:9.0.55]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) [tomcat-embed-core-9.0.55.jar:9.0.55]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357) [tomcat-embed-core-9.0.55.jar:9.0.55]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:382) [tomcat-embed-core-9.0.55.jar:9.0.55]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.55.jar:9.0.55]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:895) [tomcat-embed-core-9.0.55.jar:9.0.55]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1722) [tomcat-embed-core-9.0.55.jar:9.0.55]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.55.jar:9.0.55]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) [tomcat-embed-core-9.0.55.jar:9.0.55]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) [tomcat-embed-core-9.0.55.jar:9.0.55]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.55.jar:9.0.55]
+	at java.lang.Thread.run(Thread.java:832) [?:?]
+
+2024-01-01 19:02:45.446  WARN 18599 --- [http-nio-9090-exec-1] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [java.lang.UnsupportedOperationException: A TupleBackedMap cannot be modified.]
+2024-01-01 19:04:22.614  INFO 18599 --- [http-nio-9090-exec-2] c.i.s.c.UserMgtCtrl                      : com.ibcs.salaryapp.controllers.UserMgtCtrl :inside logout method
+2024-01-01 19:06:56.746  INFO 18599 --- [http-nio-9090-exec-5] c.i.s.c.UserMgtCtrl                      : com.ibcs.salaryapp.controllers.UserMgtCtrl :inside logout method
+2024-01-01 19:07:52.474  INFO 18599 --- [http-nio-9090-exec-6] c.i.s.c.UserMgtCtrl                      : com.ibcs.salaryapp.controllers.UserMgtCtrl :inside logout method
+2024-01-01 19:14:10.218  INFO 19226 --- [restartedMain] c.i.s.SalaryApp                          : Starting SalaryApp using Java 14.0.2 on nemo with PID 19226 (/home/joy/Documents/Works/Job Preperation/ibcs-primax/employee-salary-disbursment-poc/employee-salary-mgt/target/classes started by joy in /home/joy/Documents/Works/Job Preperation/ibcs-primax/employee-salary-disbursment-poc/employee-salary-mgt)
+2024-01-01 19:14:10.308  INFO 19226 --- [restartedMain] c.i.s.SalaryApp                          : The following profiles are active: dev-joy
+2024-01-01 19:14:10.865  INFO 19226 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-01-01 19:14:10.873  INFO 19226 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-01-01 19:14:15.989  INFO 19226 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-01-01 19:14:16.619  INFO 19226 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 593 ms. Found 8 JPA repository interfaces.
+2024-01-01 19:14:18.272  INFO 19226 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@5b4a910f' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2024-01-01 19:14:18.277  INFO 19226 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityConfig' of type [com.ibcs.salaryapp.secuirty.config.MethodSecurityConfig$$EnhancerBySpringCGLIB$$d1178e47] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2024-01-01 19:14:18.307  INFO 19226 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2024-01-01 19:14:20.241  INFO 19226 --- [restartedMain] o.s.b.w.e.t.TomcatWebServer              : Tomcat initialized with port(s): 9090 (http)
+2024-01-01 19:14:20.286  INFO 19226 --- [restartedMain] o.a.c.c.StandardService                  : Starting service [Tomcat]
+2024-01-01 19:14:20.289  INFO 19226 --- [restartedMain] o.a.c.c.StandardEngine                   : Starting Servlet engine: [Apache Tomcat/9.0.55]
+2024-01-01 19:14:20.846  INFO 19226 --- [restartedMain] o.a.c.c.C.[.[.[/]                        : Initializing Spring embedded WebApplicationContext
+2024-01-01 19:14:20.847  INFO 19226 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 9962 ms
+2024-01-01 19:14:21.852  INFO 19226 --- [restartedMain] o.h.j.i.u.LogHelper                      : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-01-01 19:14:22.267  INFO 19226 --- [restartedMain] o.h.Version                              : HHH000412: Hibernate ORM core version 5.4.32.Final
+2024-01-01 19:14:23.093  INFO 19226 --- [restartedMain] o.h.a.c.Version                          : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2024-01-01 19:14:23.742  INFO 19226 --- [restartedMain] c.z.h.HikariDataSource                   : HikariPool-1 - Starting...
+2024-01-01 19:14:25.451  INFO 19226 --- [restartedMain] c.z.h.HikariDataSource                   : HikariPool-1 - Start completed.
+2024-01-01 19:14:25.576  INFO 19226 --- [restartedMain] o.h.d.Dialect                            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL94Dialect
+2024-01-01 19:14:30.041  INFO 19226 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2024-01-01 19:14:30.146  INFO 19226 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-01-01 19:14:34.096  WARN 19226 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-01-01 19:14:37.463  INFO 19226 --- [restartedMain] o.s.s.w.DefaultSecurityFilterChain       : Will secure Ant [pattern='/v2/api-docs'] with []
+2024-01-01 19:14:37.465  INFO 19226 --- [restartedMain] o.s.s.w.DefaultSecurityFilterChain       : Will secure Ant [pattern='/configuration/ui'] with []
+2024-01-01 19:14:37.466  INFO 19226 --- [restartedMain] o.s.s.w.DefaultSecurityFilterChain       : Will secure Ant [pattern='/swagger-resources/**'] with []
+2024-01-01 19:14:37.468  INFO 19226 --- [restartedMain] o.s.s.w.DefaultSecurityFilterChain       : Will secure Ant [pattern='/configuration/security'] with []
+2024-01-01 19:14:37.469  INFO 19226 --- [restartedMain] o.s.s.w.DefaultSecurityFilterChain       : Will secure Ant [pattern='/swagger-ui.html'] with []
+2024-01-01 19:14:37.470  INFO 19226 --- [restartedMain] o.s.s.w.DefaultSecurityFilterChain       : Will secure Ant [pattern='/webjars/**'] with []
+2024-01-01 19:14:37.472  INFO 19226 --- [restartedMain] o.s.s.w.DefaultSecurityFilterChain       : Will secure Ant [pattern='/authenticate', POST] with []
+2024-01-01 19:14:37.473  INFO 19226 --- [restartedMain] o.s.s.w.DefaultSecurityFilterChain       : Will secure Ant [pattern='/v1/user/login', POST] with []
+2024-01-01 19:14:37.628  INFO 19226 --- [restartedMain] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2024-01-01 19:14:38.270  INFO 19226 --- [restartedMain] o.s.s.w.DefaultSecurityFilterChain       : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7e0d5f80, org.springframework.security.web.context.SecurityContextPersistenceFilter@75c09861, org.springframework.security.web.header.HeaderWriterFilter@cd2f541, org.springframework.web.filter.CorsFilter@7f5ee65a, org.springframework.security.web.authentication.logout.LogoutFilter@7d449482, com.ibcs.salaryapp.secuirty.config.CustomAuthenticationFilter@460ddadf, com.ibcs.salaryapp.secuirty.config.CustomAuthorizationFilter@1855b461, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@389a486e, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@73c66386, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@c3019b4, org.springframework.security.web.session.SessionManagementFilter@7f5edd36, org.springframework.security.web.access.ExceptionTranslationFilter@1ee745d7, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@4ac2888f]
+2024-01-01 19:14:38.844  INFO 19226 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-01-01 19:14:39.642  INFO 19226 --- [restartedMain] o.s.b.w.e.t.TomcatWebServer              : Tomcat started on port(s): 9090 (http) with context path ''
+2024-01-01 19:14:39.645  INFO 19226 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2024-01-01 19:14:39.709  INFO 19226 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2024-01-01 19:14:39.897  INFO 19226 --- [restartedMain] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2024-01-01 19:14:40.916  INFO 19226 --- [restartedMain] c.i.s.SalaryApp                          : Started SalaryApp in 33.365 seconds (JVM running for 40.035)
+2024-01-01 19:14:53.989  INFO 19226 --- [http-nio-9090-exec-1] o.a.c.c.C.[.[.[/]                        : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-01-01 19:14:53.991  INFO 19226 --- [http-nio-9090-exec-1] o.s.w.s.DispatcherServlet                : Initializing Servlet 'dispatcherServlet'
+2024-01-01 19:14:54.005  INFO 19226 --- [http-nio-9090-exec-1] o.s.w.s.DispatcherServlet                : Completed initialization in 13 ms
+2024-01-01 19:15:04.563  INFO 19226 --- [http-nio-9090-exec-2] c.i.s.c.SalaryCtrl                       : inside getEmployeeSalaryDetails API
+2024-01-01 19:15:04.767  WARN 19226 --- [http-nio-9090-exec-2] o.h.e.j.s.SqlExceptionHelper             : SQL Error: 0, SQLState: 42703
+2024-01-01 19:15:04.768 ERROR 19226 --- [http-nio-9090-exec-2] o.h.e.j.s.SqlExceptionHelper             : ERROR: column "basic" does not exist
+  Position: 193
+2024-01-01 19:15:04.794 ERROR 19226 --- [http-nio-9090-exec-2] c.i.s.s.e.RestErrorHandler               : could not extract ResultSet; SQL [n/a]; nested exception is org.hibernate.exception.SQLGrammarException: could not extract ResultSet
+
+org.springframework.dao.InvalidDataAccessResourceUsageException: could not extract ResultSet; SQL [n/a]; nested exception is org.hibernate.exception.SQLGrammarException: could not extract ResultSet
+	at org.springframework.orm.jpa.vendor.HibernateJpaDialect.convertHibernateAccessException(HibernateJpaDialect.java:259) ~[spring-orm-5.3.13.jar:5.3.13]
+	at org.springframework.orm.jpa.vendor.HibernateJpaDialect.translateExceptionIfPossible(HibernateJpaDialect.java:233) ~[spring-orm-5.3.13.jar:5.3.13]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.translateExceptionIfPossible(AbstractEntityManagerFactoryBean.java:551) ~[spring-orm-5.3.13.jar:5.3.13]
+	at org.springframework.dao.support.ChainedPersistenceExceptionTranslator.translateExceptionIfPossible(ChainedPersistenceExceptionTranslator.java:61) ~[spring-tx-5.3.13.jar:5.3.13]
+	at org.springframework.dao.support.DataAccessUtils.translateIfNecessary(DataAccessUtils.java:242) ~[spring-tx-5.3.13.jar:5.3.13]
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:152) ~[spring-tx-5.3.13.jar:5.3.13]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.13.jar:5.3.13]
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:145) ~[spring-data-jpa-2.5.7.jar:2.5.7]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.13.jar:5.3.13]
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97) ~[spring-aop-5.3.13.jar:5.3.13]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.13.jar:5.3.13]
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:215) ~[spring-aop-5.3.13.jar:5.3.13]
+	at com.sun.proxy.$Proxy145.getEmployeeSalaryDetails(Unknown Source) ~[?:?]
+	at com.ibcs.salaryapp.service.salary.SalaryServiceImpl.getEmployeeSalaryDetails(SalaryServiceImpl.java:84) ~[classes/:?]
+	at com.ibcs.salaryapp.service.salary.SalaryServiceImpl$$FastClassBySpringCGLIB$$fd2fa86f.invoke(<generated>) ~[classes/:?]
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218) ~[spring-core-5.3.13.jar:5.3.13]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:689) ~[spring-aop-5.3.13.jar:5.3.13]
+	at com.ibcs.salaryapp.service.salary.SalaryServiceImpl$$EnhancerBySpringCGLIB$$12325c89.getEmployeeSalaryDetails(<generated>) ~[classes/:?]
+	at com.ibcs.salaryapp.controllers.SalaryCtrl.getEmployeeSalaryDetails(SalaryCtrl.java:46) ~[classes/:?]
+	at com.ibcs.salaryapp.controllers.SalaryCtrl$$FastClassBySpringCGLIB$$7a13007b.invoke(<generated>) ~[classes/:?]
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218) ~[spring-core-5.3.13.jar:5.3.13]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:783) ~[spring-aop-5.3.13.jar:5.3.13]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-5.3.13.jar:5.3.13]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:753) ~[spring-aop-5.3.13.jar:5.3.13]
+	at org.springframework.validation.beanvalidation.MethodValidationInterceptor.invoke(MethodValidationInterceptor.java:123) ~[spring-context-5.3.13.jar:5.3.13]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.13.jar:5.3.13]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:753) ~[spring-aop-5.3.13.jar:5.3.13]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:698) ~[spring-aop-5.3.13.jar:5.3.13]
+	at com.ibcs.salaryapp.controllers.SalaryCtrl$$EnhancerBySpringCGLIB$$bf1bfc46.getEmployeeSalaryDetails(<generated>) ~[classes/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:564) ~[?:?]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205) ~[spring-web-5.3.13.jar:5.3.13]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150) ~[spring-web-5.3.13.jar:5.3.13]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117) ~[spring-webmvc-5.3.13.jar:5.3.13]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895) ~[spring-webmvc-5.3.13.jar:5.3.13]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808) ~[spring-webmvc-5.3.13.jar:5.3.13]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.3.13.jar:5.3.13]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067) [spring-webmvc-5.3.13.jar:5.3.13]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963) [spring-webmvc-5.3.13.jar:5.3.13]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) [spring-webmvc-5.3.13.jar:5.3.13]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) [spring-webmvc-5.3.13.jar:5.3.13]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:655) [tomcat-embed-core-9.0.55.jar:4.0.FR]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) [spring-webmvc-5.3.13.jar:5.3.13]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764) [tomcat-embed-core-9.0.55.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227) [tomcat-embed-core-9.0.55.jar:9.0.55]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [tomcat-embed-core-9.0.55.jar:9.0.55]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) [tomcat-embed-websocket-9.0.55.jar:9.0.55]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) [tomcat-embed-core-9.0.55.jar:9.0.55]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [tomcat-embed-core-9.0.55.jar:9.0.55]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:327) [spring-security-web-5.5.3.jar:5.5.3]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:115) [spring-security-web-5.5.3.jar:5.5.3]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:81) [spring-security-web-5.5.3.jar:5.5.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) [spring-security-web-5.5.3.jar:5.5.3]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:121) [spring-security-web-5.5.3.jar:5.5.3]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:115) [spring-security-web-5.5.3.jar:5.5.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) [spring-security-web-5.5.3.jar:5.5.3]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:126) [spring-security-web-5.5.3.jar:5.5.3]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:81) [spring-security-web-5.5.3.jar:5.5.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) [spring-security-web-5.5.3.jar:5.5.3]
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:105) [spring-security-web-5.5.3.jar:5.5.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) [spring-security-web-5.5.3.jar:5.5.3]
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:149) [spring-security-web-5.5.3.jar:5.5.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) [spring-security-web-5.5.3.jar:5.5.3]
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63) [spring-security-web-5.5.3.jar:5.5.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) [spring-security-web-5.5.3.jar:5.5.3]
+	at com.ibcs.salaryapp.secuirty.config.CustomAuthorizationFilter.doFilterInternal(CustomAuthorizationFilter.java:57) [classes/:?]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.3.13.jar:5.3.13]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) [spring-security-web-5.5.3.jar:5.5.3]
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:218) [spring-security-web-5.5.3.jar:5.5.3]
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:212) [spring-security-web-5.5.3.jar:5.5.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) [spring-security-web-5.5.3.jar:5.5.3]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:103) [spring-security-web-5.5.3.jar:5.5.3]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:89) [spring-security-web-5.5.3.jar:5.5.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) [spring-security-web-5.5.3.jar:5.5.3]
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91) [spring-web-5.3.13.jar:5.3.13]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.3.13.jar:5.3.13]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) [spring-security-web-5.5.3.jar:5.5.3]
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90) [spring-security-web-5.5.3.jar:5.5.3]
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75) [spring-security-web-5.5.3.jar:5.5.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.3.13.jar:5.3.13]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) [spring-security-web-5.5.3.jar:5.5.3]
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:110) [spring-security-web-5.5.3.jar:5.5.3]
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:80) [spring-security-web-5.5.3.jar:5.5.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) [spring-security-web-5.5.3.jar:5.5.3]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:55) [spring-security-web-5.5.3.jar:5.5.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.3.13.jar:5.3.13]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) [spring-security-web-5.5.3.jar:5.5.3]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:211) [spring-security-web-5.5.3.jar:5.5.3]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:183) [spring-security-web-5.5.3.jar:5.5.3]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358) [spring-web-5.3.13.jar:5.3.13]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271) [spring-web-5.3.13.jar:5.3.13]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) [tomcat-embed-core-9.0.55.jar:9.0.55]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [tomcat-embed-core-9.0.55.jar:9.0.55]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) [spring-web-5.3.13.jar:5.3.13]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.3.13.jar:5.3.13]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) [tomcat-embed-core-9.0.55.jar:9.0.55]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [tomcat-embed-core-9.0.55.jar:9.0.55]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) [spring-web-5.3.13.jar:5.3.13]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.3.13.jar:5.3.13]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) [tomcat-embed-core-9.0.55.jar:9.0.55]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [tomcat-embed-core-9.0.55.jar:9.0.55]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) [spring-web-5.3.13.jar:5.3.13]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.3.13.jar:5.3.13]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) [tomcat-embed-core-9.0.55.jar:9.0.55]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [tomcat-embed-core-9.0.55.jar:9.0.55]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197) [tomcat-embed-core-9.0.55.jar:9.0.55]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) [tomcat-embed-core-9.0.55.jar:9.0.55]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:540) [tomcat-embed-core-9.0.55.jar:9.0.55]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135) [tomcat-embed-core-9.0.55.jar:9.0.55]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.55.jar:9.0.55]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) [tomcat-embed-core-9.0.55.jar:9.0.55]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357) [tomcat-embed-core-9.0.55.jar:9.0.55]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:382) [tomcat-embed-core-9.0.55.jar:9.0.55]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.55.jar:9.0.55]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:895) [tomcat-embed-core-9.0.55.jar:9.0.55]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1722) [tomcat-embed-core-9.0.55.jar:9.0.55]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.55.jar:9.0.55]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) [tomcat-embed-core-9.0.55.jar:9.0.55]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) [tomcat-embed-core-9.0.55.jar:9.0.55]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.55.jar:9.0.55]
+	at java.lang.Thread.run(Thread.java:832) [?:?]
+Caused by: org.hibernate.exception.SQLGrammarException: could not extract ResultSet
+	at org.hibernate.exception.internal.SQLStateConversionDelegate.convert(SQLStateConversionDelegate.java:103) ~[hibernate-core-5.4.32.Final.jar:5.4.32.Final]
+	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:42) ~[hibernate-core-5.4.32.Final.jar:5.4.32.Final]
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:113) ~[hibernate-core-5.4.32.Final.jar:5.4.32.Final]
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:99) ~[hibernate-core-5.4.32.Final.jar:5.4.32.Final]
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.extract(ResultSetReturnImpl.java:67) ~[hibernate-core-5.4.32.Final.jar:5.4.32.Final]
+	at org.hibernate.loader.Loader.getResultSet(Loader.java:2297) ~[hibernate-core-5.4.32.Final.jar:5.4.32.Final]
+	at org.hibernate.loader.Loader.executeQueryStatement(Loader.java:2050) ~[hibernate-core-5.4.32.Final.jar:5.4.32.Final]
+	at org.hibernate.loader.Loader.executeQueryStatement(Loader.java:2012) ~[hibernate-core-5.4.32.Final.jar:5.4.32.Final]
+	at org.hibernate.loader.Loader.doQuery(Loader.java:948) ~[hibernate-core-5.4.32.Final.jar:5.4.32.Final]
+	at org.hibernate.loader.Loader.doQueryAndInitializeNonLazyCollections(Loader.java:349) ~[hibernate-core-5.4.32.Final.jar:5.4.32.Final]
+	at org.hibernate.loader.Loader.doList(Loader.java:2843) ~[hibernate-core-5.4.32.Final.jar:5.4.32.Final]
+	at org.hibernate.loader.Loader.doList(Loader.java:2825) ~[hibernate-core-5.4.32.Final.jar:5.4.32.Final]
+	at org.hibernate.loader.Loader.listIgnoreQueryCache(Loader.java:2657) ~[hibernate-core-5.4.32.Final.jar:5.4.32.Final]
+	at org.hibernate.loader.Loader.list(Loader.java:2652) ~[hibernate-core-5.4.32.Final.jar:5.4.32.Final]
+	at org.hibernate.loader.custom.CustomLoader.list(CustomLoader.java:338) ~[hibernate-core-5.4.32.Final.jar:5.4.32.Final]
+	at org.hibernate.internal.SessionImpl.listCustomQuery(SessionImpl.java:2141) ~[hibernate-core-5.4.32.Final.jar:5.4.32.Final]
+	at org.hibernate.internal.AbstractSharedSessionContract.list(AbstractSharedSessionContract.java:1169) ~[hibernate-core-5.4.32.Final.jar:5.4.32.Final]
+	at org.hibernate.query.internal.NativeQueryImpl.doList(NativeQueryImpl.java:176) ~[hibernate-core-5.4.32.Final.jar:5.4.32.Final]
+	at org.hibernate.query.internal.AbstractProducedQuery.list(AbstractProducedQuery.java:1604) ~[hibernate-core-5.4.32.Final.jar:5.4.32.Final]
+	at org.hibernate.query.Query.getResultList(Query.java:165) ~[hibernate-core-5.4.32.Final.jar:5.4.32.Final]
+	at org.springframework.data.jpa.repository.query.JpaQueryExecution$CollectionExecution.doExecute(JpaQueryExecution.java:126) ~[spring-data-jpa-2.5.7.jar:2.5.7]
+	at org.springframework.data.jpa.repository.query.JpaQueryExecution.execute(JpaQueryExecution.java:88) ~[spring-data-jpa-2.5.7.jar:2.5.7]
+	at org.springframework.data.jpa.repository.query.AbstractJpaQuery.doExecute(AbstractJpaQuery.java:155) ~[spring-data-jpa-2.5.7.jar:2.5.7]
+	at org.springframework.data.jpa.repository.query.AbstractJpaQuery.execute(AbstractJpaQuery.java:143) ~[spring-data-jpa-2.5.7.jar:2.5.7]
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.doInvoke(RepositoryMethodInvoker.java:137) ~[spring-data-commons-2.5.7.jar:2.5.7]
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.invoke(RepositoryMethodInvoker.java:121) ~[spring-data-commons-2.5.7.jar:2.5.7]
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.doInvoke(QueryExecutorMethodInterceptor.java:159) ~[spring-data-commons-2.5.7.jar:2.5.7]
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.invoke(QueryExecutorMethodInterceptor.java:138) ~[spring-data-commons-2.5.7.jar:2.5.7]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.13.jar:5.3.13]
+	at org.springframework.data.projection.DefaultMethodInvokingMethodInterceptor.invoke(DefaultMethodInvokingMethodInterceptor.java:80) ~[spring-data-commons-2.5.7.jar:2.5.7]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.13.jar:5.3.13]
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123) ~[spring-tx-5.3.13.jar:5.3.13]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:388) ~[spring-tx-5.3.13.jar:5.3.13]
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119) ~[spring-tx-5.3.13.jar:5.3.13]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.13.jar:5.3.13]
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137) ~[spring-tx-5.3.13.jar:5.3.13]
+	... 117 more
+Caused by: org.postgresql.util.PSQLException: ERROR: column "basic" does not exist
+  Position: 193
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2565) ~[postgresql-42.2.24.jar:42.2.24]
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2297) ~[postgresql-42.2.24.jar:42.2.24]
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:322) ~[postgresql-42.2.24.jar:42.2.24]
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:481) ~[postgresql-42.2.24.jar:42.2.24]
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:401) ~[postgresql-42.2.24.jar:42.2.24]
+	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:164) ~[postgresql-42.2.24.jar:42.2.24]
+	at org.postgresql.jdbc.PgPreparedStatement.executeQuery(PgPreparedStatement.java:114) ~[postgresql-42.2.24.jar:42.2.24]
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeQuery(ProxyPreparedStatement.java:52) ~[HikariCP-4.0.3.jar:?]
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeQuery(HikariProxyPreparedStatement.java) ~[HikariCP-4.0.3.jar:?]
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.extract(ResultSetReturnImpl.java:57) ~[hibernate-core-5.4.32.Final.jar:5.4.32.Final]
+	at org.hibernate.loader.Loader.getResultSet(Loader.java:2297) ~[hibernate-core-5.4.32.Final.jar:5.4.32.Final]
+	at org.hibernate.loader.Loader.executeQueryStatement(Loader.java:2050) ~[hibernate-core-5.4.32.Final.jar:5.4.32.Final]
+	at org.hibernate.loader.Loader.executeQueryStatement(Loader.java:2012) ~[hibernate-core-5.4.32.Final.jar:5.4.32.Final]
+	at org.hibernate.loader.Loader.doQuery(Loader.java:948) ~[hibernate-core-5.4.32.Final.jar:5.4.32.Final]
+	at org.hibernate.loader.Loader.doQueryAndInitializeNonLazyCollections(Loader.java:349) ~[hibernate-core-5.4.32.Final.jar:5.4.32.Final]
+	at org.hibernate.loader.Loader.doList(Loader.java:2843) ~[hibernate-core-5.4.32.Final.jar:5.4.32.Final]
+	at org.hibernate.loader.Loader.doList(Loader.java:2825) ~[hibernate-core-5.4.32.Final.jar:5.4.32.Final]
+	at org.hibernate.loader.Loader.listIgnoreQueryCache(Loader.java:2657) ~[hibernate-core-5.4.32.Final.jar:5.4.32.Final]
+	at org.hibernate.loader.Loader.list(Loader.java:2652) ~[hibernate-core-5.4.32.Final.jar:5.4.32.Final]
+	at org.hibernate.loader.custom.CustomLoader.list(CustomLoader.java:338) ~[hibernate-core-5.4.32.Final.jar:5.4.32.Final]
+	at org.hibernate.internal.SessionImpl.listCustomQuery(SessionImpl.java:2141) ~[hibernate-core-5.4.32.Final.jar:5.4.32.Final]
+	at org.hibernate.internal.AbstractSharedSessionContract.list(AbstractSharedSessionContract.java:1169) ~[hibernate-core-5.4.32.Final.jar:5.4.32.Final]
+	at org.hibernate.query.internal.NativeQueryImpl.doList(NativeQueryImpl.java:176) ~[hibernate-core-5.4.32.Final.jar:5.4.32.Final]
+	at org.hibernate.query.internal.AbstractProducedQuery.list(AbstractProducedQuery.java:1604) ~[hibernate-core-5.4.32.Final.jar:5.4.32.Final]
+	at org.hibernate.query.Query.getResultList(Query.java:165) ~[hibernate-core-5.4.32.Final.jar:5.4.32.Final]
+	at org.springframework.data.jpa.repository.query.JpaQueryExecution$CollectionExecution.doExecute(JpaQueryExecution.java:126) ~[spring-data-jpa-2.5.7.jar:2.5.7]
+	at org.springframework.data.jpa.repository.query.JpaQueryExecution.execute(JpaQueryExecution.java:88) ~[spring-data-jpa-2.5.7.jar:2.5.7]
+	at org.springframework.data.jpa.repository.query.AbstractJpaQuery.doExecute(AbstractJpaQuery.java:155) ~[spring-data-jpa-2.5.7.jar:2.5.7]
+	at org.springframework.data.jpa.repository.query.AbstractJpaQuery.execute(AbstractJpaQuery.java:143) ~[spring-data-jpa-2.5.7.jar:2.5.7]
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.doInvoke(RepositoryMethodInvoker.java:137) ~[spring-data-commons-2.5.7.jar:2.5.7]
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.invoke(RepositoryMethodInvoker.java:121) ~[spring-data-commons-2.5.7.jar:2.5.7]
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.doInvoke(QueryExecutorMethodInterceptor.java:159) ~[spring-data-commons-2.5.7.jar:2.5.7]
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.invoke(QueryExecutorMethodInterceptor.java:138) ~[spring-data-commons-2.5.7.jar:2.5.7]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.13.jar:5.3.13]
+	at org.springframework.data.projection.DefaultMethodInvokingMethodInterceptor.invoke(DefaultMethodInvokingMethodInterceptor.java:80) ~[spring-data-commons-2.5.7.jar:2.5.7]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.13.jar:5.3.13]
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123) ~[spring-tx-5.3.13.jar:5.3.13]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:388) ~[spring-tx-5.3.13.jar:5.3.13]
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119) ~[spring-tx-5.3.13.jar:5.3.13]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.13.jar:5.3.13]
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137) ~[spring-tx-5.3.13.jar:5.3.13]
+	... 117 more
+
+2024-01-01 19:15:04.905  WARN 19226 --- [http-nio-9090-exec-2] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.dao.InvalidDataAccessResourceUsageException: could not extract ResultSet; SQL [n/a]; nested exception is org.hibernate.exception.SQLGrammarException: could not extract ResultSet]
+2024-01-01 19:16:47.172  INFO 19226 --- [Thread-4] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-01-01 19:16:47.190  INFO 19226 --- [Thread-4] c.z.h.HikariDataSource                   : HikariPool-1 - Shutdown initiated...
+2024-01-01 19:16:47.276  INFO 19226 --- [Thread-4] c.z.h.HikariDataSource                   : HikariPool-1 - Shutdown completed.
+2024-01-01 19:16:47.694  INFO 19226 --- [restartedMain] c.i.s.SalaryApp                          : SalaryApp started successfully
+2024-01-01 19:16:48.262  INFO 19226 --- [restartedMain] c.i.s.SalaryApp                          : Starting SalaryApp using Java 14.0.2 on nemo with PID 19226 (/home/joy/Documents/Works/Job Preperation/ibcs-primax/employee-salary-disbursment-poc/employee-salary-mgt/target/classes started by joy in /home/joy/Documents/Works/Job Preperation/ibcs-primax/employee-salary-disbursment-poc/employee-salary-mgt)
+2024-01-01 19:16:48.290  INFO 19226 --- [restartedMain] c.i.s.SalaryApp                          : The following profiles are active: dev-joy
+2024-01-01 19:16:51.154  INFO 19226 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-01-01 19:16:51.776  INFO 19226 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 594 ms. Found 8 JPA repository interfaces.
+2024-01-01 19:16:52.883  INFO 19226 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@75ba5f04' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2024-01-01 19:16:52.898  INFO 19226 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityConfig' of type [com.ibcs.salaryapp.secuirty.config.MethodSecurityConfig$$EnhancerBySpringCGLIB$$d1178e47] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2024-01-01 19:16:52.917  INFO 19226 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2024-01-01 19:16:53.717  INFO 19226 --- [restartedMain] o.s.b.w.e.t.TomcatWebServer              : Tomcat initialized with port(s): 9090 (http)
+2024-01-01 19:16:53.719  INFO 19226 --- [restartedMain] o.a.c.c.StandardService                  : Starting service [Tomcat]
+2024-01-01 19:16:53.735  INFO 19226 --- [restartedMain] o.a.c.c.StandardEngine                   : Starting Servlet engine: [Apache Tomcat/9.0.55]
+2024-01-01 19:16:53.996  INFO 19226 --- [restartedMain] o.a.c.c.C.[.[.[/]                        : Initializing Spring embedded WebApplicationContext
+2024-01-01 19:16:53.998  INFO 19226 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 5663 ms
+2024-01-01 19:16:54.480  INFO 19226 --- [restartedMain] o.h.j.i.u.LogHelper                      : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-01-01 19:16:54.502  INFO 19226 --- [restartedMain] c.z.h.HikariDataSource                   : HikariPool-2 - Starting...
+2024-01-01 19:16:54.678  INFO 19226 --- [restartedMain] c.z.h.HikariDataSource                   : HikariPool-2 - Start completed.
+2024-01-01 19:16:54.680  INFO 19226 --- [restartedMain] o.h.d.Dialect                            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL94Dialect
+2024-01-01 19:16:56.249  INFO 19226 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2024-01-01 19:16:56.257  INFO 19226 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-01-01 19:16:59.229  WARN 19226 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-01-01 19:17:00.538  INFO 19226 --- [restartedMain] o.s.s.w.DefaultSecurityFilterChain       : Will secure Ant [pattern='/v2/api-docs'] with []
+2024-01-01 19:17:00.539  INFO 19226 --- [restartedMain] o.s.s.w.DefaultSecurityFilterChain       : Will secure Ant [pattern='/configuration/ui'] with []
+2024-01-01 19:17:00.540  INFO 19226 --- [restartedMain] o.s.s.w.DefaultSecurityFilterChain       : Will secure Ant [pattern='/swagger-resources/**'] with []
+2024-01-01 19:17:00.542  INFO 19226 --- [restartedMain] o.s.s.w.DefaultSecurityFilterChain       : Will secure Ant [pattern='/configuration/security'] with []
+2024-01-01 19:17:00.543  INFO 19226 --- [restartedMain] o.s.s.w.DefaultSecurityFilterChain       : Will secure Ant [pattern='/swagger-ui.html'] with []
+2024-01-01 19:17:00.545  INFO 19226 --- [restartedMain] o.s.s.w.DefaultSecurityFilterChain       : Will secure Ant [pattern='/webjars/**'] with []
+2024-01-01 19:17:00.545  INFO 19226 --- [restartedMain] o.s.s.w.DefaultSecurityFilterChain       : Will secure Ant [pattern='/authenticate', POST] with []
+2024-01-01 19:17:00.546  INFO 19226 --- [restartedMain] o.s.s.w.DefaultSecurityFilterChain       : Will secure Ant [pattern='/v1/user/login', POST] with []
+2024-01-01 19:17:00.638  INFO 19226 --- [restartedMain] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2024-01-01 19:17:01.124  INFO 19226 --- [restartedMain] o.s.s.w.DefaultSecurityFilterChain       : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@195a5103, org.springframework.security.web.context.SecurityContextPersistenceFilter@5fa099b5, org.springframework.security.web.header.HeaderWriterFilter@2266ca83, org.springframework.web.filter.CorsFilter@7491f9e2, org.springframework.security.web.authentication.logout.LogoutFilter@13f08eb1, com.ibcs.salaryapp.secuirty.config.CustomAuthenticationFilter@c0d758d, com.ibcs.salaryapp.secuirty.config.CustomAuthorizationFilter@449d9acc, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@277209bc, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3354fd03, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@f041915, org.springframework.security.web.session.SessionManagementFilter@56e5a18d, org.springframework.security.web.access.ExceptionTranslationFilter@7ea0d14c, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@306f16e6]
+2024-01-01 19:17:01.362  INFO 19226 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-01-01 19:17:02.054  INFO 19226 --- [restartedMain] o.s.b.w.e.t.TomcatWebServer              : Tomcat started on port(s): 9090 (http) with context path ''
+2024-01-01 19:17:02.055  INFO 19226 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2024-01-01 19:17:02.057  INFO 19226 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2024-01-01 19:17:02.083  INFO 19226 --- [restartedMain] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2024-01-01 19:17:02.602  INFO 19226 --- [restartedMain] c.i.s.SalaryApp                          : Started SalaryApp in 14.87 seconds (JVM running for 181.721)
+2024-01-01 19:17:02.621  INFO 19226 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2024-01-01 19:17:10.336  INFO 19226 --- [http-nio-9090-exec-1] o.a.c.c.C.[.[.[/]                        : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-01-01 19:17:10.343  INFO 19226 --- [http-nio-9090-exec-1] o.s.w.s.DispatcherServlet                : Initializing Servlet 'dispatcherServlet'
+2024-01-01 19:17:10.357  INFO 19226 --- [http-nio-9090-exec-1] o.s.w.s.DispatcherServlet                : Completed initialization in 13 ms
+2024-01-01 19:17:10.809  INFO 19226 --- [http-nio-9090-exec-1] c.i.s.c.SalaryCtrl                       : inside getEmployeeSalaryDetails API
+2024-01-01 19:17:57.936  INFO 19226 --- [Thread-7] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-01-01 19:17:57.941  INFO 19226 --- [Thread-7] c.z.h.HikariDataSource                   : HikariPool-2 - Shutdown initiated...
+2024-01-01 19:17:58.011  INFO 19226 --- [Thread-7] c.z.h.HikariDataSource                   : HikariPool-2 - Shutdown completed.
+2024-01-01 19:17:58.459  INFO 19226 --- [restartedMain] c.i.s.SalaryApp                          : SalaryApp started successfully
+2024-01-01 19:17:58.802  INFO 19226 --- [restartedMain] c.i.s.SalaryApp                          : Starting SalaryApp using Java 14.0.2 on nemo with PID 19226 (/home/joy/Documents/Works/Job Preperation/ibcs-primax/employee-salary-disbursment-poc/employee-salary-mgt/target/classes started by joy in /home/joy/Documents/Works/Job Preperation/ibcs-primax/employee-salary-disbursment-poc/employee-salary-mgt)
+2024-01-01 19:17:58.808  INFO 19226 --- [restartedMain] c.i.s.SalaryApp                          : The following profiles are active: dev-joy
+2024-01-01 19:18:01.591  INFO 19226 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-01-01 19:18:01.887  INFO 19226 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 294 ms. Found 8 JPA repository interfaces.
+2024-01-01 19:18:02.818  INFO 19226 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@51863cb7' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2024-01-01 19:18:02.826  INFO 19226 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityConfig' of type [com.ibcs.salaryapp.secuirty.config.MethodSecurityConfig$$EnhancerBySpringCGLIB$$d1178e47] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2024-01-01 19:18:02.834  INFO 19226 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2024-01-01 19:18:03.400  INFO 19226 --- [restartedMain] o.s.b.w.e.t.TomcatWebServer              : Tomcat initialized with port(s): 9090 (http)
+2024-01-01 19:18:03.407  INFO 19226 --- [restartedMain] o.a.c.c.StandardService                  : Starting service [Tomcat]
+2024-01-01 19:18:03.413  INFO 19226 --- [restartedMain] o.a.c.c.StandardEngine                   : Starting Servlet engine: [Apache Tomcat/9.0.55]
+2024-01-01 19:18:03.649  INFO 19226 --- [restartedMain] o.a.c.c.C.[.[.[/]                        : Initializing Spring embedded WebApplicationContext
+2024-01-01 19:18:03.658  INFO 19226 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4833 ms
+2024-01-01 19:18:04.490  INFO 19226 --- [restartedMain] o.h.j.i.u.LogHelper                      : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-01-01 19:18:04.549  INFO 19226 --- [restartedMain] c.z.h.HikariDataSource                   : HikariPool-3 - Starting...
+2024-01-01 19:18:04.748  INFO 19226 --- [restartedMain] c.z.h.HikariDataSource                   : HikariPool-3 - Start completed.
+2024-01-01 19:18:04.749  INFO 19226 --- [restartedMain] o.h.d.Dialect                            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL94Dialect
+2024-01-01 19:18:06.511  INFO 19226 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2024-01-01 19:18:06.512  INFO 19226 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-01-01 19:18:08.594  WARN 19226 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-01-01 19:18:09.407  INFO 19226 --- [restartedMain] o.s.s.w.DefaultSecurityFilterChain       : Will secure Ant [pattern='/v2/api-docs'] with []
+2024-01-01 19:18:09.408  INFO 19226 --- [restartedMain] o.s.s.w.DefaultSecurityFilterChain       : Will secure Ant [pattern='/configuration/ui'] with []
+2024-01-01 19:18:09.409  INFO 19226 --- [restartedMain] o.s.s.w.DefaultSecurityFilterChain       : Will secure Ant [pattern='/swagger-resources/**'] with []
+2024-01-01 19:18:09.410  INFO 19226 --- [restartedMain] o.s.s.w.DefaultSecurityFilterChain       : Will secure Ant [pattern='/configuration/security'] with []
+2024-01-01 19:18:09.410  INFO 19226 --- [restartedMain] o.s.s.w.DefaultSecurityFilterChain       : Will secure Ant [pattern='/swagger-ui.html'] with []
+2024-01-01 19:18:09.411  INFO 19226 --- [restartedMain] o.s.s.w.DefaultSecurityFilterChain       : Will secure Ant [pattern='/webjars/**'] with []
+2024-01-01 19:18:09.413  INFO 19226 --- [restartedMain] o.s.s.w.DefaultSecurityFilterChain       : Will secure Ant [pattern='/authenticate', POST] with []
+2024-01-01 19:18:09.414  INFO 19226 --- [restartedMain] o.s.s.w.DefaultSecurityFilterChain       : Will secure Ant [pattern='/v1/user/login', POST] with []
+2024-01-01 19:18:09.530  INFO 19226 --- [restartedMain] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2024-01-01 19:18:09.935  INFO 19226 --- [restartedMain] o.s.s.w.DefaultSecurityFilterChain       : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@112a991b, org.springframework.security.web.context.SecurityContextPersistenceFilter@656a441a, org.springframework.security.web.header.HeaderWriterFilter@5351c460, org.springframework.web.filter.CorsFilter@7c3a7a7d, org.springframework.security.web.authentication.logout.LogoutFilter@7f2a80a8, com.ibcs.salaryapp.secuirty.config.CustomAuthenticationFilter@1abfd2e8, com.ibcs.salaryapp.secuirty.config.CustomAuthorizationFilter@6b851066, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4ac1ee6d, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@176e4191, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2ea2ae4c, org.springframework.security.web.session.SessionManagementFilter@447372b2, org.springframework.security.web.access.ExceptionTranslationFilter@14176278, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@3d598243]
+2024-01-01 19:18:10.144  INFO 19226 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-01-01 19:18:10.637  INFO 19226 --- [restartedMain] o.s.b.w.e.t.TomcatWebServer              : Tomcat started on port(s): 9090 (http) with context path ''
+2024-01-01 19:18:10.639  INFO 19226 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2024-01-01 19:18:10.644  INFO 19226 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2024-01-01 19:18:10.674  INFO 19226 --- [restartedMain] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2024-01-01 19:18:11.037  INFO 19226 --- [restartedMain] c.i.s.SalaryApp                          : Started SalaryApp in 12.533 seconds (JVM running for 250.156)
+2024-01-01 19:18:11.045  INFO 19226 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged

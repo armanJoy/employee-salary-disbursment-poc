@@ -18,4 +18,6 @@ public interface SalaryService {
 
     List<EmployeeSalary> getDisburseSalaryDetails(int month, int year);
 
+    List<EmployeeSalary> getEmployeeSalaryDetails();
+
 }

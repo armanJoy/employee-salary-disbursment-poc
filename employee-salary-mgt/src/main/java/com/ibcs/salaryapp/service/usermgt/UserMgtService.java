@@ -25,6 +25,8 @@ public interface UserMgtService {
 
     LoginResVm login(LoginVm loginVm);
 
+    ApiStatusVm logout(String token);
+
     UserInfo convertUserCreationVmToUsersLoginDomain(UserVm userVm);
 
     UserVm convertUserLoginToUserVm(UserInfo usersLogin);

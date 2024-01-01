@@ -12,6 +12,7 @@ import com.ibcs.salaryapp.repository.salary.EmpSalaryRepo;
 import com.ibcs.salaryapp.util.AppConstant;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 import javax.annotation.PostConstruct;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -76,6 +77,12 @@ public class SalaryServiceImpl implements SalaryService {
     @Override
     public List<EmployeeSalary> getDisburseSalaryDetails(int month, int year) {
         return empSalaryRepo.getDisbursedSalaryInfo(month, year);
+    }
+
+    @Override
+    public List<EmployeeSalary> getEmployeeSalaryDetails() {
+        List<EmployeeSalary> employeeSalarys = empSalaryRepo.getEmployeeSalaryDetails();
+        return employeeSalarys;
     }
 
     @Override
