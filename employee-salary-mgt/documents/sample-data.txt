@@ -1,0 +1,37 @@
+{
+  "address": "Mirpur-1216, Dhaka",
+  "firstName": "Arman",
+  "lastName": "Joy",
+  "password": "joy1234",
+  "phone": "+880 1738014685",
+  "rank": 6,
+  "userEmail": "email2arjoy@gmail.com",
+  "userType": "employee"
+}
+
+eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJlbWFpbDJhcmpveUBnbWFpbC5jb20iLCJyb2xlcyI6ImVtcGxveWVlIiwiaWF0IjoxNzA0MDQxNDg0LCJleHAiOjE3MDQ5MDU0ODR9.-mn7wwHJPgGYMckLwffrZotiY3YwFHmA517ALXXHyJlzq-a35lDf9vT18jblIDD_VPfI4zsqHgVMsO-i_0bD4g
+
+
+
+
+{
+  "address": "Mirpur-1216, Dhaka",
+  "firstName": "Jawad",
+  "lastName": "Reza",
+  "password": "reza1234",
+  "phone": "+880 1838014684",
+  "rank": 5,
+  "userEmail": "jawad@gmail.com",
+  "userType": "employee"
+}
+
+{
+  "userId": 1006,
+  "email": "jawad@gmail.com",
+  "firstName": "Jawad",
+  "lastName": "Reza",
+  "token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqYXdhZEBnbWFpbC5jb20iLCJyb2xlcyI6ImVtcGxveWVlIiwiaWF0IjoxNzA0MDkzNDEzLCJleHAiOjE3MDQ5NTc0MTN9.Ew6HndeSELw98j2Y_j-3iNLYZuQn8XLd8SRVDCM6qWUUgEJN0tTUwuSyck00V2__2casZ_SXaI4iQVOvwnVIFA",
+  "msg": "SUCCESSFUL",
+  "status": true,
+  "userRole": "employee"
+}
