@@ -1,4 +1,4 @@
-package com.ibcs.salaryapp.secuirty.config;
+package com.ibcs.salaryapp.model.domain.user;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

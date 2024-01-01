@@ -1,4 +1,4 @@
-package com.ibcs.salaryapp.exceptions;
+package com.ibcs.salaryapp.secuirty.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.MethodArgumentNotValidException;

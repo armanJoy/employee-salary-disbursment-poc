@@ -1,5 +1,6 @@
-package com.ibcs.salaryapp.secuirty.config;
+package com.ibcs.salaryapp.repository.user;
 
+import com.ibcs.salaryapp.model.domain.user.UserJwtToken;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;

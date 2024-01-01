@@ -1,5 +1,7 @@
 package com.ibcs.salaryapp.secuirty.config;
 
+import com.ibcs.salaryapp.repository.user.UserJwtTokenRepository;
+import com.ibcs.salaryapp.model.domain.user.UserJwtToken;
 import com.ibcs.salaryapp.secuirty.UserAuthResponse;
 import static com.ibcs.salaryapp.secuirty.config.TokenManager.TOKEN_PREFIX;
 import static com.ibcs.salaryapp.secuirty.config.TokenManager.parseTokenBody;

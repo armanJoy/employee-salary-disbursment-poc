@@ -18,8 +18,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import static com.ibcs.salaryapp.secuirty.config.TokenManager.generateToken;
 import com.ibcs.salaryapp.secuirty.UserAuthResponse;
-import com.ibcs.salaryapp.secuirty.config.UserJwtToken;
-import com.ibcs.salaryapp.secuirty.config.UserJwtTokenRepository;
+import com.ibcs.salaryapp.model.domain.user.UserJwtToken;
+import com.ibcs.salaryapp.repository.user.UserJwtTokenRepository;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -239,12 +239,6 @@ public class UserMgtServiceImpl implements UserMgtService {
     }
 
     @Override
-    public UserInfo findUserByEmail(String email) {
-        UserInfo user = userInfoRepo.findByUserEmailAndActive(email, true);
-        return user;
-    }
-
-    @Override
     public String getUserRole(long userId) {
         String roleName = null;
         UserRole userRole = userRoleRepo.findByUserId(userId);
@@ -305,11 +299,6 @@ public class UserMgtServiceImpl implements UserMgtService {
         userJwtToken.setToken(token);
 
         userJwtTokenRepository.save(userJwtToken);
-    }
-
-    @Override
-    public LoginResVm convertUserLoginToLoginResVM(UserInfo usersLogin) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
 }
