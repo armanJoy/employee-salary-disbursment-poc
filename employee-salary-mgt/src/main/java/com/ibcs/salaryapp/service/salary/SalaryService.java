@@ -10,7 +10,11 @@ import org.springframework.stereotype.Service;
 @Service
 public interface SalaryService {
 
+    Object getBasicSalary();
+
     ApiStatusVm updateBasicSalary(double newBasicSalary);
+
+    Object getCompanySalaryAcBalance();
 
     ApiStatusVm updateComSalaryAcBalance(double newBasicSalary);
 

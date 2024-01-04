@@ -1,10 +1,19 @@
 package com.ibcs.salaryapp.model.domain.user;
 
+import com.ibcs.salaryapp.model.domain.salary.EmpSalary;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.GeneratedValue;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -58,4 +67,5 @@ public class UserInfo {
 
     @Column(name = "active", columnDefinition = "BOOLEAN DEFAULT TRUE")
     private boolean active = true;
+
 }

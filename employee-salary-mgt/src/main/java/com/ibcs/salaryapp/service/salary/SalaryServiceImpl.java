@@ -35,6 +35,11 @@ public class SalaryServiceImpl implements SalaryService {
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
     @Override
+    public Object getBasicSalary() {
+        return basicSalaryRepo.findById(AppConstant.BASIC_SALARY_INFO_ID);
+    }
+
+    @Override
     public ApiStatusVm updateBasicSalary(double newBasicSalary) {
         ApiStatusVm apiStatusVm = new ApiStatusVm();
         try {
@@ -52,6 +57,11 @@ public class SalaryServiceImpl implements SalaryService {
         }
 
         return apiStatusVm;
+    }
+
+    @Override
+    public Object getCompanySalaryAcBalance() {
+        return companyBankAcRepo.findById(AppConstant.COMPANY_BANK_AC_ID);
     }
 
     @Override

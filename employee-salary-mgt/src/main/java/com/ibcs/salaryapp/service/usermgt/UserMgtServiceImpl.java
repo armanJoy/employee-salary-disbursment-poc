@@ -116,7 +116,7 @@ public class UserMgtServiceImpl implements UserMgtService {
 
     @Override
     public List<UserVm> getEmployees() {
-        List<UserInfo> employees = userInfoRepo.findAllByUserType(AppConstant.EMPLOYEE_ROLE);
+        List<UserInfo> employees = userInfoRepo.findAllByUserTypeOrderByRankAsc(AppConstant.EMPLOYEE_ROLE);
         return employees.stream().map(item -> convertUserLoginToUserVm(item)).collect(Collectors.toList());
 
     }
@@ -191,6 +191,7 @@ public class UserMgtServiceImpl implements UserMgtService {
     }
 
     @Override
+    @Transactional
     public ApiStatusVm logout(String token) {
         ApiStatusVm apiStatusVm = new ApiStatusVm();
         try {

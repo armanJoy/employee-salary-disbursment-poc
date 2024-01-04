@@ -17,23 +17,6 @@ import org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExc
 @ControllerAdvice
 public class ApiExceptionHandler extends ExceptionHandlerExceptionResolver {
 
-    @ExceptionHandler(MaxUploadSizeExceededException.class)
-    public ResponseEntity<ResponseMessage> handleMaxSizeException(MaxUploadSizeExceededException exc) {
-        return ResponseEntity
-                .status(HttpStatus.EXPECTATION_FAILED)
-                .body(new ResponseMessage("One or more files are too large!"));
-    }
-
-    @ExceptionHandler(MultipartException.class)
-    ResponseEntity<ResponseMessage> handleMultipartException(MultipartException ex, WebRequest request) {
-        String msg = ex.getMessage();
-
-        logger.error(msg, ex);
-        return ResponseEntity
-                .status(400)
-                .body(new ResponseMessage(msg));
-    }
-
     @ExceptionHandler(MethodArgumentNotValidException.class)
     ResponseEntity<ResponseMessage> handleMethodArgumentNotValidException(MethodArgumentNotValidException ex, WebRequest request) {
         String msg = "";
@@ -42,16 +25,6 @@ public class ApiExceptionHandler extends ExceptionHandlerExceptionResolver {
                 msg = msg.concat(allError.getDefaultMessage());
             }
         }
-        logger.error(msg, ex);
-        return ResponseEntity
-                .status(400)
-                .body(new ResponseMessage(msg));
-    }
-
-    @ExceptionHandler(AppCustomException.class)
-    ResponseEntity<ResponseMessage> handleAppCustomException(AppCustomException ex, WebRequest request) {
-        String msg = ex.getMessage();
-
         logger.error(msg, ex);
         return ResponseEntity
                 .status(400)

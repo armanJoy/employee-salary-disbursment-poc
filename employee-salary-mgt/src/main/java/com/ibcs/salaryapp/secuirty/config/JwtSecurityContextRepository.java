@@ -17,6 +17,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.beans.factory.annotation.Autowired;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.security.access.AccessDeniedException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.GrantedAuthority;
@@ -60,17 +61,13 @@ public class JwtSecurityContextRepository implements SecurityContextRepository {
 
     @Override
     public void saveContext(SecurityContext context, HttpServletRequest request, HttpServletResponse response) {
-        if (context != null && context.getAuthentication() != null) {
+
+        String url = getFullURL(request);
+
+        if (context != null && context.getAuthentication() != null && !StringUtils.contains(AppConstant.LOGOUT_URL, url)) {
             try {
                 UserAuthResponse userDetails = (UserAuthResponse) context.getAuthentication().getPrincipal();
 
-//        String subject = tokenManager.parseTokenBody(token).getSubject();
-//
-//        String[] uidAndDeviceId = subject.split("[,]", 0);
-//
-//        String userId = uidAndDeviceId[0];
-//        String deviceId = uidAndDeviceId[1];
-//
                 if (userDetails != null) {
                     UserJwtToken userJwtToken = userJwtTokenRepository.findByUserId(userDetails.getUsername());
                     String token = extractTokenFromRequest(request);
@@ -117,6 +114,17 @@ public class JwtSecurityContextRepository implements SecurityContextRepository {
             return new UsernamePasswordAuthenticationToken(username, null, authorities);
         } else {
             throw new AccessDeniedException("Failed to parse authentication token");
+        }
+    }
+
+    public String getFullURL(HttpServletRequest request) {
+        StringBuilder requestURL = new StringBuilder(request.getRequestURL().toString());
+        String queryString = request.getQueryString();
+
+        if (queryString == null) {
+            return requestURL.toString();
+        } else {
+            return requestURL.append('?').append(queryString).toString();
         }
     }
 

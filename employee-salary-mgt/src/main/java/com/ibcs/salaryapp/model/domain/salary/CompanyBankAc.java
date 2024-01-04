@@ -1,5 +1,6 @@
 package com.ibcs.salaryapp.model.domain.salary;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.ibcs.salaryapp.model.domain.util.TimeAuditor;
 import com.ibcs.salaryapp.util.AppConstant;
 import java.io.Serializable;
@@ -16,6 +17,7 @@ import lombok.Setter;
 @Setter
 public class CompanyBankAc extends TimeAuditor implements Serializable {
 
+    @JsonIgnore
     @Id
     @Column(name = "comBankId")
     private String comBankId = AppConstant.COMPANY_BANK_AC_ID;

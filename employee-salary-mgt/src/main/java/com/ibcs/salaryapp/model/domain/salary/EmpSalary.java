@@ -1,12 +1,16 @@
 package com.ibcs.salaryapp.model.domain.salary;
 
+import com.ibcs.salaryapp.model.domain.user.UserInfo;
 import com.ibcs.salaryapp.model.domain.util.TimeAuditor;
 import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 import lombok.Getter;
@@ -27,6 +31,9 @@ public class EmpSalary extends TimeAuditor implements Serializable {
     @Column(name = "userId", nullable = false)
     private long userId;
 
+//    @ManyToOne(fetch = FetchType.LAZY)
+//    @JoinColumn(name = "userId")
+//    private UserInfo user;
     @Column(name = "bankId", nullable = false)
     private long bankId;
 

@@ -62,10 +62,22 @@ public class SalaryCtrl {
         return new ResponseEntity(salaryService.disburseMonthlySalary(month, year), HttpStatus.OK);
     }
 
+    @GetMapping(value = "/basic-salary")
+    public ResponseEntity<Object> getBasicSalary() {
+        logger.info("inside getBasicSalary API");
+        return new ResponseEntity(salaryService.getBasicSalary(), HttpStatus.OK);
+    }
+
     @PatchMapping(value = "/basic-salary")
     public ResponseEntity<ApiStatusVm> updateBasicSalary(@Positive @RequestParam double newBasicSalary) {
         logger.info("inside updateBasicSalary API");
         return new ResponseEntity(salaryService.updateBasicSalary(newBasicSalary), HttpStatus.OK);
+    }
+
+    @GetMapping(value = "/company-balance")
+    public ResponseEntity<Object> getCompanySalaryAcBalance() {
+        logger.info("inside getCompanySalaryAcBalance API");
+        return new ResponseEntity(salaryService.getCompanySalaryAcBalance(), HttpStatus.OK);
     }
 
     @PatchMapping(value = "/company-balance")

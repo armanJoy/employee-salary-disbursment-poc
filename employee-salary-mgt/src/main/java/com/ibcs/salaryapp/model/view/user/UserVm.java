@@ -1,5 +1,6 @@
 package com.ibcs.salaryapp.model.view.user;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.ibcs.salaryapp.util.AppConstant;
 import javax.validation.constraints.*;
 import lombok.Getter;
@@ -17,6 +18,7 @@ public class UserVm {
     @NotEmpty(message = "email is required")
     private String userEmail;
 
+    @JsonIgnore
     @NotEmpty(message = "password is required")
     private String password;
 

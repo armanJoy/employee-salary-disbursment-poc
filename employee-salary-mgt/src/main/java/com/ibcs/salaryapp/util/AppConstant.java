@@ -14,6 +14,7 @@ public class AppConstant {
     public static final String EMPLOYEE_ROLE = "employee";
     public static final String SYSADMIN_ROLE = "sysadmin";
     public static final String ROLE_NOT_MATCHED = "ROLE  NOT MATCHED";
+    public static final String LOGOUT_URL = "logout";
 
     public static final String SUCCESSFUL = "SUCCESSFUL";
     public static final String UNSUCCESSFUL = "UNSUCCESSFUL";

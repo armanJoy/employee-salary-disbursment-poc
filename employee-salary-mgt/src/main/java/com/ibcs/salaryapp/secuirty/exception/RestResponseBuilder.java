@@ -10,71 +10,71 @@ import java.util.Objects;
 
 public class RestResponseBuilder {
 
-  private int status;
-  private String error;
-  private String message;
-  private String path;
+    private int status;
+    private String error;
+    private String message;
+    private String path;
 
-  public RestResponseBuilder status(int status) {
-    this.status = status;
-    return this;
-  }
-
-  public RestResponseBuilder status(HttpStatus status) {
-    this.status = status.value();
-
-    if (status.isError()) {
-      this.error = status.getReasonPhrase();
+    public RestResponseBuilder status(int status) {
+        this.status = status;
+        return this;
     }
 
-    return this;
-  }
+    public RestResponseBuilder status(HttpStatus status) {
+        this.status = status.value();
 
-  public RestResponseBuilder error(String error) {
-    this.error = error;
-    return this;
-  }
+        if (status.isError()) {
+            this.error = status.getReasonPhrase();
+        }
 
-  public RestResponseBuilder exception(ResponseStatusException exception) {
-    HttpStatus status = exception.getStatus();
-    this.status = status.value();
-
-    if (!Objects.requireNonNull(exception.getReason()).isEmpty()) {
-      this.message = exception.getReason();
+        return this;
     }
 
-
-    if (status.isError()) {
-      this.error = status.getReasonPhrase();
+    public RestResponseBuilder error(String error) {
+        this.error = error;
+        return this;
     }
 
-    return this;
-  }
+    public RestResponseBuilder exception(ResponseStatusException exception) {
+        HttpStatus status = exception.getStatus();
+        this.status = status.value();
 
-  public RestResponseBuilder message(String message) {
-    this.message = message;
-    return this;
-  }
+        if (!Objects.requireNonNull(exception.getReason()).isEmpty()) {
+            this.message = exception.getReason();
+        }
 
-  public RestResponseBuilder path(String path) {
-    this.path = path;
-    return this;
-  }
+        if (status.isError()) {
+            this.error = status.getReasonPhrase();
+        }
 
-  public RestResponse build() {
-    RestResponse response = new RestResponse();
-    response.setStatus(status);
-    response.setError(error);
-    response.setMessage(message);
-    response.setPath(path);
-    return response;
-  }
+        return this;
+    }
 
-  public ResponseEntity<RestResponse> entity() {
-    return ResponseEntity.status(status).headers(HttpHeaders.EMPTY).body(build());
-  }
+    public RestResponseBuilder message(String message) {
+        this.message = message;
+        return this;
+    }
 
-  public String json() {
-    return build().toJson();
-  }
+    public RestResponseBuilder path(String path) {
+        this.path = path;
+        return this;
+    }
+
+    public RestResponse build() {
+        RestResponse response = new RestResponse();
+        response.setStatus(status);
+        response.setError(error);
+        response.setMessage(message);
+        response.setPath(path);
+        return response;
+    }
+
+    public ResponseEntity<RestResponse> entity() {
+        return ResponseEntity.status(status).headers(HttpHeaders.EMPTY).body(build());
+    }
+
+    public String json() {
+        return build().toJson();
+    }
+
 }
