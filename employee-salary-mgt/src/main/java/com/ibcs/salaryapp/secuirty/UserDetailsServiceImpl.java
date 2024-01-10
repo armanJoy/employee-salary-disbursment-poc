@@ -32,7 +32,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
     @Override
     @Transactional
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        UserInfo user = userInfoRepo.findByUserEmailAndActive(username, true);
+        UserInfo user = userInfoRepo.findTop1ByUserEmailAndActive(username, true);
         if (user != null) {
             //return new User(user.getUserEmail(), user.getPassword(), buildSimpleGrantedAuthorities(user.getRoles()));
             return new UserAuthResponse(user, userRoleRepo, roleRepo);

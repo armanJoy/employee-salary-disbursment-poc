@@ -9,6 +9,8 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface EmpBankRepo extends JpaRepository<EmpBank, Long> {
 
+    EmpBank findByEmpBankIdAndUserIdAndActive(long empBankId, long userId, boolean isActive);
+
     EmpBank findByUserIdAndActive(long userId, boolean isActive);
 
     @Query(value = "UPDATE public.emp_bank SET active=false WHERE emp_bank_id=?1 RETURNING active", nativeQuery = true)

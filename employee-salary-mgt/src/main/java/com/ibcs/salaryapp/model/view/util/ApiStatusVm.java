@@ -14,6 +14,7 @@ public class ApiStatusVm {
     private boolean jobDone = false;
 
     public ApiStatusVm() {
+
     }
 
 }

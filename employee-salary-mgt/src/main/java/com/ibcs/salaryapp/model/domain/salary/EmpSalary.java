@@ -1,26 +1,28 @@
 package com.ibcs.salaryapp.model.domain.salary;
 
-import com.ibcs.salaryapp.model.domain.user.UserInfo;
 import com.ibcs.salaryapp.model.domain.util.TimeAuditor;
 import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+@Getter
+@Setter
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Table(name = "EmpSalary", uniqueConstraints = {
     @UniqueConstraint(name = "UniqueSalary", columnNames = {"userId", "sMonth", "sYear"})})
-@Getter
-@Setter
 public class EmpSalary extends TimeAuditor implements Serializable {
 
     @Id
@@ -35,7 +37,7 @@ public class EmpSalary extends TimeAuditor implements Serializable {
 //    @JoinColumn(name = "userId")
 //    private UserInfo user;
     @Column(name = "bankId", nullable = false)
-    private long bankId;
+    private Long bankId;
 
     @Column(name = "sMonth", nullable = false)
     private int sMonth;
@@ -46,6 +48,7 @@ public class EmpSalary extends TimeAuditor implements Serializable {
     @Column(name = "sAmount", nullable = false)
     private double sAmount;
 
+    @Builder.Default
     @Column(name = "disbursed", nullable = false, columnDefinition = "BOOLEAN DEFAULT FALSE")
     private boolean disbursed = false;
 }

@@ -12,9 +12,11 @@ import org.springframework.stereotype.Service;
 @Service
 public interface UserMgtService {
 
+    UserVm getEmployeeInfo(long userId);
+
     ApiStatusVm createUser(UserVm userVm);
 
-    UserVm updateEmployeeInfo(UserVm userVm);
+    ApiStatusVm updateEmployeeInfo(UserVm userVm);
 
     List<UserVm> getEmployees();
 

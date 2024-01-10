@@ -40,6 +40,9 @@ public class EmpBank extends TimeAuditor implements Serializable {
     @Column(name = "branch", nullable = false, length = 80)
     private String branch;
 
+    @Column(name = "routing", length = 20)
+    private String routing;
+
     @Column(name = "active", columnDefinition = "BOOLEAN DEFAULT TRUE")
     private boolean active = true;
 

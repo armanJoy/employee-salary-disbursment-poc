@@ -15,9 +15,9 @@ public interface EmployeeSalary {
 
     public void setId(long id);
 
-    public long getBankId();
+    public Long getBankId();
 
-    public void setBankId(long bankId);
+    public void setBankId(Long bankId);
 
     public String getFirstName();
 
@@ -31,8 +31,20 @@ public interface EmployeeSalary {
 
     public void setRank(int rank);
 
+    public int getMonth();
+
+    public void setMonth(int month);
+
+    public int getYear();
+
+    public void setYear(int year);
+
     public double getSalary();
 
     public void setSalary(double salary);
+
+    public boolean getDisbursed();
+
+    public void setDisbursed(boolean disbursed);
 
 }

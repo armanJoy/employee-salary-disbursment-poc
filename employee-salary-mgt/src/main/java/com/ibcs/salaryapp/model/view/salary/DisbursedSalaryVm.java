@@ -14,7 +14,7 @@ public class DisbursedSalaryVm {
 
     private boolean disburseComplete;
 
-//    private double disbursedAmount;
+    private double disbursedAmount;
     private double remainingBalance;
 
     private double undisbursedAmount;

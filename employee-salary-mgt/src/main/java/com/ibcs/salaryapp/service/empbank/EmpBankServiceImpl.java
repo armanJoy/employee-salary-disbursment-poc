@@ -36,10 +36,15 @@ public class EmpBankServiceImpl implements EmpBankService {
 
     @Override
     public EmpBankVm updateEmpBank(EmpBankVm empBankInfoVm) {
+        EmpBank savedEmpBank = empBankRepo.findByEmpBankIdAndUserIdAndActive(empBankInfoVm.getEmpBankId(), empBankInfoVm.getUserId(), true);
+        if (savedEmpBank != null) {
+            EmpBank empBankInfo = EmpBankVm.toDomain(empBankInfoVm);
+            empBankInfo = empBankRepo.save(empBankInfo);
+            return EmpBankVm.toView(empBankInfo);
+        } else {
+            return null;
+        }
 
-        EmpBank empBankInfo = EmpBankVm.toDomain(empBankInfoVm);
-        empBankInfo = empBankRepo.save(empBankInfo);
-        return EmpBankVm.toView(empBankInfo);
     }
 
     @Override

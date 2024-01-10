@@ -19,6 +19,7 @@ import org.slf4j.LoggerFactory;
 import static com.ibcs.salaryapp.secuirty.config.TokenManager.generateToken;
 import com.ibcs.salaryapp.secuirty.UserAuthResponse;
 import com.ibcs.salaryapp.model.domain.user.UserJwtToken;
+import com.ibcs.salaryapp.model.view.empbank.EmpBankVm;
 import com.ibcs.salaryapp.repository.user.UserJwtTokenRepository;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -58,23 +59,45 @@ public class UserMgtServiceImpl implements UserMgtService {
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
     @Override
+    public UserVm getEmployeeInfo(long userId) {
+        UserInfo userInfo = userInfoRepo.findById(userId);
+
+        EmpBankVm empBankVm = empBankService.getEmpBank(userId);
+        UserVm userVm = convertUserLoginToUserVm(userInfo);
+        userVm.setEmpBankInfo(empBankVm);
+        return userVm;
+    }
+
+    @Override
     @Transactional
     public ApiStatusVm createUser(UserVm userVm) {
         ApiStatusVm apiStatusVm = new ApiStatusVm();
 
-        UserInfo isUserExist = userInfoRepo.findByUserEmailAndActive(userVm.getUserEmail(), true);
+        UserInfo isUserExist = userInfoRepo.findTop1ByUserEmailOrNidAndActive(userVm.getEmail(), userVm.getNid(), true);
 
         if (isUserExist != null) {
-            apiStatusVm.setMsg("User already exist");
+            String msg = "";
+            if (isUserExist.getUserEmail().equals(userVm.getEmail())) {
+                msg = msg + "User with this email (" + userVm.getEmail() + ") already exist. ";
+            }
+            if (isUserExist.getNid().equals(userVm.getNid())) {
+                msg = msg + "User with this NID (" + userVm.getNid() + ") already exist.";
+            }
+            apiStatusVm.setMsg(msg);
             apiStatusVm.setJobDone(false);
         } else {
             UserInfo usersLogin = convertUserCreationVmToUsersLoginDomain(userVm);
-            apiStatusVm.setMsg("User created");
-            apiStatusVm.setJobDone(true);
+
             if (usersLogin != null && StringUtils.isNotBlank(usersLogin.getUserEmail())) {
                 try {
                     usersLogin = userInfoRepo.save(usersLogin);
                     UserRole userRole = saveUserRole(usersLogin.getId(), userVm.getUserType());
+                    EmpBankVm empBankInfo = userVm.getEmpBankInfo();
+                    empBankInfo.setUserId(usersLogin.getId());
+
+                    ApiStatusVm bankSaveStatus = empBankService.addEmpBank(empBankInfo);
+                    apiStatusVm.setMsg("New Employee Created");
+                    apiStatusVm.setJobDone(true);
                 } catch (Exception e) {
                     logger.error("Error occured during User creation: " + e.getMessage());
                     apiStatusVm.setMsg("Error occured during User creation");
@@ -88,35 +111,52 @@ public class UserMgtServiceImpl implements UserMgtService {
     }
 
     @Override
-    public UserVm updateEmployeeInfo(UserVm userVm) {
+    public ApiStatusVm updateEmployeeInfo(UserVm userVm) {
+        ApiStatusVm apiStatusVm = new ApiStatusVm();
         UserInfo usersLogin = userInfoRepo.findById(userVm.getId());
-        if (StringUtils.isNotBlank(userVm.getFirstName())) {
-            usersLogin.setFirstName(userVm.getFirstName());
-        }
-        if (StringUtils.isNotBlank(userVm.getLastName())) {
-            usersLogin.setLastName(userVm.getLastName());
-        }
+        if (usersLogin != null) {
+            if (StringUtils.isNotBlank(userVm.getFirstName())) {
+                usersLogin.setFirstName(userVm.getFirstName());
+            }
+            if (StringUtils.isNotBlank(userVm.getLastName())) {
+                usersLogin.setLastName(userVm.getLastName());
+            }
 
-        if (StringUtils.isNotBlank(userVm.getPhone())) {
-            usersLogin.setPhone(userVm.getPhone());
-        }
+            if (StringUtils.isNotBlank(userVm.getPhone())) {
+                usersLogin.setPhone(userVm.getPhone());
+            }
 
-        if (StringUtils.isNotBlank(userVm.getAddress())) {
-            usersLogin.setAddress(userVm.getAddress());
-        }
+            if (StringUtils.isNotBlank(userVm.getAddress())) {
+                usersLogin.setAddress(userVm.getAddress());
+            }
 
-        if (StringUtils.isNotBlank(userVm.getUserType())) {
-            usersLogin.setUserType(userVm.getUserType());
-        }
+            if (StringUtils.isNotBlank(userVm.getUserType())) {
+                usersLogin.setUserType(userVm.getUserType());
+            }
 
-        usersLogin.setRank(userVm.getRank());
-        usersLogin = userInfoRepo.save(usersLogin);
-        return convertUserLoginToUserVm(usersLogin);
+            usersLogin.setRank(userVm.getRank());
+            usersLogin = userInfoRepo.save(usersLogin);
+
+            EmpBankVm empBankInfo = userVm.getEmpBankInfo();
+            empBankInfo.setUserId(usersLogin.getId());
+            empBankInfo = empBankService.updateEmpBank(userVm.getEmpBankInfo());
+
+            userVm = convertUserLoginToUserVm(usersLogin);
+            userVm.setEmpBankInfo(empBankInfo);
+            apiStatusVm.setMsg("Employee information updated");
+            apiStatusVm.setJobDone(true);
+        } else {
+            apiStatusVm.setMsg("Couldn't update the information");
+            apiStatusVm.setJobDone(false);
+
+        }
+        return apiStatusVm;
+
     }
 
     @Override
     public List<UserVm> getEmployees() {
-        List<UserInfo> employees = userInfoRepo.findAllByUserTypeOrderByRankAsc(AppConstant.EMPLOYEE_ROLE);
+        List<UserInfo> employees = userInfoRepo.findAllByUserTypeAndActiveOrderByRankAsc(AppConstant.EMPLOYEE_ROLE, true);
         return employees.stream().map(item -> convertUserLoginToUserVm(item)).collect(Collectors.toList());
 
     }
@@ -147,7 +187,7 @@ public class UserMgtServiceImpl implements UserMgtService {
             Authentication authentication = null;
             try {
                 authentication = authenticationManager.authenticate(
-                        new UsernamePasswordAuthenticationToken(loginVm.getUserEmail(), loginVm.getPassword()));
+                        new UsernamePasswordAuthenticationToken(loginVm.getEmail(), loginVm.getPassword()));
             } catch (Exception e) {
                 logger.info("Exception in authentication: " + e.getMessage());
             }
@@ -208,14 +248,17 @@ public class UserMgtServiceImpl implements UserMgtService {
     @Override
     public UserInfo convertUserCreationVmToUsersLoginDomain(UserVm userVm) {
         UserInfo usersLogin = new UserInfo();
-        usersLogin.setUserEmail(userVm.getUserEmail());
+        usersLogin.setUserEmail(userVm.getEmail());
         usersLogin.setPassword(passwordEncoder.encode(userVm.getPassword()));
         usersLogin.setFirstName(userVm.getFirstName());
         usersLogin.setLastName(userVm.getLastName());
+        usersLogin.setGender(userVm.getGender());
         usersLogin.setPhone(userVm.getPhone());
         usersLogin.setAddress(userVm.getAddress());
-        usersLogin.setUserType(userVm.getUserType());
         usersLogin.setRank(userVm.getRank());
+        usersLogin.setNid(userVm.getNid());
+        usersLogin.setJoiningDate(userVm.getJoiningDate());
+        usersLogin.setUserType(userVm.getUserType());
 
         return usersLogin;
     }
@@ -226,14 +269,17 @@ public class UserMgtServiceImpl implements UserMgtService {
         if (usersLogin != null) {
             user = new UserVm();
             user.setId(usersLogin.getId());
-            user.setUserEmail(usersLogin.getUserEmail());
-            user.setPhone(usersLogin.getPhone());
+            user.setEmail(usersLogin.getUserEmail());
             user.setFirstName(usersLogin.getFirstName());
             user.setLastName(usersLogin.getLastName());
+            user.setGender(usersLogin.getGender());
             user.setPhone(usersLogin.getPhone());
             user.setAddress(usersLogin.getAddress());
-            user.setUserType(usersLogin.getUserType());
             user.setRank(usersLogin.getRank());
+            user.setNid(usersLogin.getNid());
+            user.setJoiningDate(usersLogin.getJoiningDate());
+            user.setUserType(usersLogin.getUserType());
+
         }
 
         return user;
@@ -276,7 +322,7 @@ public class UserMgtServiceImpl implements UserMgtService {
     public ApiStatusVm isMailExist(String email) {
         email = (StringUtils.isNotBlank(email)) ? email.trim().toLowerCase() : "";
 
-        UserInfo user = userInfoRepo.findByUserEmailAndActive(email, true);
+        UserInfo user = userInfoRepo.findTop1ByUserEmailAndActive(email, true);
 
         if (user != null) {
             return new ApiStatusVm("User exist with this email", true);

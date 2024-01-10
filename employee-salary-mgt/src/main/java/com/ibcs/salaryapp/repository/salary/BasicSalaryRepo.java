@@ -11,4 +11,6 @@ public interface BasicSalaryRepo extends JpaRepository<BasicSalary, String> {
     @Query(value = "UPDATE basic_salary SET balance=?1 WHERE basic_salary_id=?2 RETURNING *", nativeQuery = true)
     BasicSalary updateCompanySalaryAcBalance(double newBasicSalary, String companyBankAcId);
 
+    BasicSalary findByBasicSalaryId(String basicSalaryId);
+
 }

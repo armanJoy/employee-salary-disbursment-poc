@@ -5,6 +5,7 @@ public class AppConstant {
     private AppConstant() {
     }
 
+    public static final double ALLOWANCE_PERCENTAGE = 1.35;
     public static final double HOUSE_RENT_PERCENTAGE = 20.0;
     public static final double MEDICAL_ALLOWANCE_PERCENTAGE = 15.0;
 
@@ -25,7 +26,7 @@ public class AppConstant {
     public static final String ALLOW_ORIGINS = "*";
     public static final String ALLOW_ORIGIN_HEADER = "Access-Control-Allow-Origin";
     public static final String RX_PHONE_WITH_COUNTRY_CODE = "^\\+[1-9]\\d{1,14}$";
-    public static final String RX_COUNTRY_CODE_SPACE_NUMBER = "^\\+\\d{2,3}\\s\\d{10}$";
+    public static final String RX_COUNTRY_CODE_SPACE_NUMBER = "^\\d{11}$";
     public static final String REGEX_ALPHA_NUMERIC_PUNCTUATION_TEXT = "[a-zA-Z0-9\\p{Punct}]+";
     public static final String RX_YEAR_MONTH_DAY = "^((\\d{4})-(0[1-9]|[1][0-2])-(0[1-9]|[1-2][0-9]|3[0-1])).*";
     public static final String RX_DAY_MONTH_YEAR = "^((0[1-9]|[1-2][0-9]|3[0-1])-(0[1-9]|[1][0-2])-(\\d{4})).*";

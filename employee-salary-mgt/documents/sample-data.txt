@@ -35,3 +35,40 @@ eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJlbWFpbDJhcmpveUBnbWFpbC5jb20iLCJyb2xlcyI6ImVtcGx
   "status": true,
   "userRole": "employee"
 }
+
+
+
+
+
+{
+  "address": "Mirpur-1216, Dhaka",
+  "firstName": "Anamul",
+  "lastName": "Haque",
+  "password": "ah1234",
+  "phone": "+880 1738014100",
+  "rank": 3,
+  "userEmail": "arjoy@gmail.com",
+  "userType": "employee",
+  "nid": "75847600447013968",
+  "joiningDate": '2023-01-01'
+}
+
+
+        // "eslint-config-prettier": "^8.8.0",
+        // "eslint-plugin-prettier": "^4.2.1",
+           // "prettier": "^2.8.8",
+           
+           
+           
+           
+       .prettierrc    
+           // {
+//     "semi": true,
+//     "arrowParens": "always",
+//     "bracketSpacing": true,
+//     "printWidth": 80,
+//     "singleQuote": true,
+//     "tabWidth": 4,
+//     "endOfLine": "auto"
+// }
+

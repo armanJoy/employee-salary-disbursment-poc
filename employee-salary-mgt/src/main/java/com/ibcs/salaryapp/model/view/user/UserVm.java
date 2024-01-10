@@ -1,7 +1,9 @@
 package com.ibcs.salaryapp.model.view.user;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.ibcs.salaryapp.model.view.empbank.EmpBankVm;
 import com.ibcs.salaryapp.util.AppConstant;
+import java.time.LocalDate;
+import javax.validation.Valid;
 import javax.validation.constraints.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -16,9 +18,8 @@ public class UserVm {
 
     @Email
     @NotEmpty(message = "email is required")
-    private String userEmail;
+    private String email;
 
-    @JsonIgnore
     @NotEmpty(message = "password is required")
     private String password;
 
@@ -28,11 +29,21 @@ public class UserVm {
     @NotEmpty(message = "last name is required")
     private String lastName;
 
-    @Pattern(regexp = AppConstant.RX_COUNTRY_CODE_SPACE_NUMBER, message = "phoneNumber should be <country code><one white space><10 digit number>")
+    @NotEmpty(message = "Gender is required")
+    private String gender;
+
+    @Pattern(regexp = AppConstant.RX_COUNTRY_CODE_SPACE_NUMBER, message = "Phone should be 11 diigit")
     private String phone;
 
     @NotEmpty(message = "address is required")
     private String address;
+
+    @NotEmpty(message = "nid is required")
+    @Size(min = 13, max = 17, message = "nid must be 13 or 17 digit")
+    private String nid;
+
+    @PastOrPresent(message = "joiningDate must be past or present date")
+    private LocalDate joiningDate;
 
     @NotEmpty(message = "userType is required")
     private String userType;
@@ -41,8 +52,11 @@ public class UserVm {
     @Max(value = 6)
     private int rank;
 
-    public String getUserEmail() {
-        return userEmail.trim().toLowerCase();
+    @Valid
+    private EmpBankVm empBankInfo;
+
+    public String getEmail() {
+        return email.trim().toLowerCase();
     }
 
 }

@@ -1,6 +1,5 @@
 package com.ibcs.salaryapp.controllers;
 
-import com.ibcs.salaryapp.model.view.empbank.EmpBankVm;
 import com.ibcs.salaryapp.model.view.user.LoginResVm;
 import com.ibcs.salaryapp.model.view.user.LoginVm;
 import com.ibcs.salaryapp.model.view.user.UserVm;
@@ -36,13 +35,31 @@ public class UserMgtCtrl {
     @PostMapping(value = "/create")
     public ResponseEntity<ApiStatusVm> createUser(@Valid @RequestBody UserVm userVm) {
         logger.info("inside createUser API");
-        return new ResponseEntity(userMgtService.createUser(userVm), HttpStatus.OK);
+        try {
+            ApiStatusVm status = userMgtService.createUser(userVm);
+            return new ResponseEntity(status, (status.isJobDone()) ? HttpStatus.OK : HttpStatus.BAD_REQUEST);
+        } catch (Exception e) {
+
+            return new ResponseEntity(new ApiStatusVm("Error occured.", false), HttpStatus.BAD_REQUEST);
+        }
+
     }
 
-    @PutMapping(value = "/update")
-    public ResponseEntity<UserVm> updateEmployeeInfo(@Valid @RequestBody UserVm userVm) {
+    @PostMapping(value = "/update")
+    public ResponseEntity<ApiStatusVm> updateEmployeeInfo(@Valid @RequestBody UserVm userVm) {
         logger.info("inside updateEmployeeInfo API");
-        return new ResponseEntity(userMgtService.updateEmployeeInfo(userVm), HttpStatus.OK);
+        try {
+            ApiStatusVm status = userMgtService.updateEmployeeInfo(userVm);
+            return new ResponseEntity(status, (status.isJobDone()) ? HttpStatus.OK : HttpStatus.BAD_REQUEST);
+
+        } catch (Exception e) {
+            return new ResponseEntity("Error occured", HttpStatus.BAD_REQUEST);
+        }
+    }
+
+    @GetMapping("/employee")
+    public UserVm getEmployeeInfo(@Positive @RequestParam long userId) {
+        return userMgtService.getEmployeeInfo(userId);
     }
 
     @GetMapping("/employees")

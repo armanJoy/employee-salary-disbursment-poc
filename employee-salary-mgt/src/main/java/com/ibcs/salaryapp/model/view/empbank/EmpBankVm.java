@@ -1,6 +1,7 @@
 package com.ibcs.salaryapp.model.view.empbank;
 
 import com.ibcs.salaryapp.model.domain.empbank.EmpBank;
+import javax.validation.constraints.NotEmpty;
 import lombok.Getter;
 import lombok.Setter;
 import org.apache.commons.lang3.StringUtils;
@@ -13,15 +14,23 @@ public class EmpBankVm {
 
     private long userId;
 
+    @NotEmpty(message = "account holder name required")
     private String acName;
 
+    @NotEmpty(message = "account number required")
     private String acNumber;
 
+    @NotEmpty(message = "account type required")
     private String acType;
 
+    @NotEmpty(message = "bank name required")
     private String bank;
 
+    @NotEmpty(message = "branch name required")
     private String branch;
+
+    @NotEmpty(message = "routing required")
+    private String routing;
 
     public static EmpBankVm toView(EmpBank empBankInfo) {
         EmpBankVm empBankInfoVm = new EmpBankVm();
@@ -32,6 +41,7 @@ public class EmpBankVm {
         empBankInfoVm.setAcType(empBankInfo.getAcType());
         empBankInfoVm.setBank(empBankInfo.getBank());
         empBankInfoVm.setBranch(empBankInfo.getBranch());
+        empBankInfoVm.setRouting(empBankInfo.getRouting());
         return empBankInfoVm;
     }
 
@@ -46,6 +56,7 @@ public class EmpBankVm {
         empBankInfo.setAcType(empBankInfoVm.getAcType());
         empBankInfo.setBank(empBankInfoVm.getBank());
         empBankInfo.setBranch(empBankInfoVm.getBranch());
+        empBankInfo.setRouting(empBankInfoVm.getRouting());
         return empBankInfo;
     }
 

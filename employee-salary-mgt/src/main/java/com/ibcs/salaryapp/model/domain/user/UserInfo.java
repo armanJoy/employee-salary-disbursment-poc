@@ -1,19 +1,11 @@
 package com.ibcs.salaryapp.model.domain.user;
 
-import com.ibcs.salaryapp.model.domain.salary.EmpSalary;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
-import javax.persistence.CascadeType;
+import java.time.LocalDate;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.GeneratedValue;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -53,11 +45,20 @@ public class UserInfo {
     @Column(name = "last_name", length = 80)
     private String lastName;
 
+    @Column(name = "gender", length = 10)
+    private String gender;
+
     @Column(name = "phone", length = 15)
     private String phone;
 
     @Column(name = "address", length = 255)
     private String address;
+
+    @Column(name = "nid", length = 17, columnDefinition = "VARCHAR(17) DEFAULT lpad(floor(random()*10^17)::bigint::text,17,'0')")
+    private String nid;
+
+    @Column(name = "joiningDate", columnDefinition = "TIMESTAMP WITHOUT TIME ZONE DEFAULT '2023-01-01'")
+    private LocalDate joiningDate;
 
     @Column(name = "user_type", length = 20)
     private String userType;
