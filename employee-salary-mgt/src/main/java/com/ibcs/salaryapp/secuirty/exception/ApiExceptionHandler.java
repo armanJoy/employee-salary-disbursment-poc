@@ -1,5 +1,7 @@
 package com.ibcs.salaryapp.secuirty.exception;
 
+import java.util.stream.Collectors;
+import javax.validation.ConstraintViolationException;
 import org.springframework.http.HttpHeaders;
 import org.springframework.web.multipart.MaxUploadSizeExceededException;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
@@ -26,6 +28,16 @@ public class ApiExceptionHandler extends ExceptionHandlerExceptionResolver {
             }
         }
         logger.error(msg, ex);
+        return ResponseEntity
+                .status(400)
+                .body(new ResponseMessage(msg));
+    }
+
+    @ExceptionHandler(ConstraintViolationException.class)
+    ResponseEntity<ResponseMessage> handleConstraintViolationException(ConstraintViolationException ex, WebRequest request) {
+        String msg = ex.getConstraintViolations().stream().map(item -> item.getMessage()).collect(Collectors.joining(", "));
+        logger.error(msg, ex);
+        System.out.println(msg);
         return ResponseEntity
                 .status(400)
                 .body(new ResponseMessage(msg));

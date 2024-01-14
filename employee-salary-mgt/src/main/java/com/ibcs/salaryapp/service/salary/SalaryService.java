@@ -23,8 +23,7 @@ public interface SalaryService {
 
     List<EmployeeSalary> getDisburseSalaryDetails(int month, int year);
 
-    List<EmployeeSalary> getEmployeeSalaryDetails();
-
+//    List<EmployeeSalary> getEmployeeSalaryDetails();
     List<EmployeeSalary> getMonthlySalaryDetailsForSpecificEmployees(int sMonth, int sYear, List<Long> users);
 
     List<EmpSalary> getEmployeeSalaryHistory(long empId);

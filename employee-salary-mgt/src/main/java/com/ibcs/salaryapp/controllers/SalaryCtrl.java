@@ -24,6 +24,8 @@ import java.util.List;
 
 import javax.validation.Valid;
 import javax.validation.constraints.Email;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Positive;
@@ -43,7 +45,7 @@ public class SalaryCtrl {
     SalaryService salaryService;
 
     @GetMapping(value = "/detail")
-    public List<EmpSalary> getEmployeeSalaryHistory(long empId) {
+    public List<EmpSalary> getEmployeeSalaryHistory(@Positive(message = "Invalid employee ID") long empId) {
         logger.info("inside getEmployeeSalaryHistory API");
         return salaryService.getEmployeeSalaryHistory(empId);
     }
@@ -60,14 +62,13 @@ public class SalaryCtrl {
         return salaryService.disburseSalaryToSpecificUsers(disbursableSalary);
     }
 
-    @GetMapping(value = "/employee-salary")
-    public ResponseEntity<List<EmployeeSalary>> getEmployeeSalaryDetails() {
-        logger.info("inside getEmployeeSalaryDetails API");
-        List<EmployeeSalary> employeeSalarys = salaryService.getEmployeeSalaryDetails();
-
-        return (employeeSalarys != null && employeeSalarys.size() > 0) ? new ResponseEntity(employeeSalarys, HttpStatus.OK) : new ResponseEntity(new ArrayList<>(), HttpStatus.NOT_FOUND);
-    }
-
+//    @GetMapping(value = "/employee-salary")
+//    public ResponseEntity<List<EmployeeSalary>> getEmployeeSalaryDetails() {
+//        logger.info("inside getEmployeeSalaryDetails API");
+//        List<EmployeeSalary> employeeSalarys = salaryService.getEmployeeSalaryDetails();
+//
+//        return (employeeSalarys != null && employeeSalarys.size() > 0) ? new ResponseEntity(employeeSalarys, HttpStatus.OK) : new ResponseEntity(new ArrayList<>(), HttpStatus.NOT_FOUND);
+//    }
 //    @GetMapping(value = "/monthly-details")
 //    public ResponseEntity<List<EmployeeSalary>> getMonthlySalaryDetailsForSpecificEmployees(@Positive @RequestParam int month, @Positive @RequestParam int year) {
 //        logger.info("inside getMonthlySalaryDetailsForSpecificEmployees API");
@@ -76,7 +77,7 @@ public class SalaryCtrl {
 //        return (employeeSalarys != null && employeeSalarys.size() > 0) ? new ResponseEntity(employeeSalarys, HttpStatus.OK) : new ResponseEntity(new ArrayList<>(), HttpStatus.NOT_FOUND);
 //    }
     @GetMapping(value = "/monthly-details")
-    public ResponseEntity<List<EmployeeSalary>> getDisburseSalaryDetails(@Positive @RequestParam int month, @Positive @RequestParam int year, @RequestParam(required = false) List<Long> selectedUsers) {
+    public ResponseEntity<List<EmployeeSalary>> getDisburseSalaryDetails(@Min(value = 1, message = "Invalid month") @Max(value = 12, message = "Invalid month") @RequestParam int month, @Min(value = 2023, message = "Invalid year") @Max(value = 2024, message = "Invalid year") @RequestParam int year, @RequestParam(required = false) List<Long> selectedUsers) {
         logger.info("inside getDisburseSalaryDetails API");
         List<EmployeeSalary> employeeSalarys = (selectedUsers != null && selectedUsers.size() > 0) ? salaryService.getMonthlySalaryDetailsForSpecificEmployees(month, year, selectedUsers) : salaryService.getDisburseSalaryDetails(month, year);
 
@@ -84,31 +85,31 @@ public class SalaryCtrl {
     }
 
     @GetMapping(value = "/initiate-disburse")
-    public ResponseEntity<DisbursedSalaryVm> disburseMonthlySalary(@Positive @RequestParam int month, @Positive @RequestParam int year) {
+    public ResponseEntity<DisbursedSalaryVm> disburseMonthlySalary(@Min(value = 1, message = "Invalid month") @Max(value = 12, message = "Invalid month") @RequestParam int month, @Min(value = 2023, message = "Invalid year") @Max(value = 2024, message = "Invalid year") @RequestParam int year) {
         logger.info("inside disburseMonthlySalary API");
         return new ResponseEntity(salaryService.disburseMonthlySalary(month, year), HttpStatus.OK);
     }
 
-    @GetMapping(value = "/get-basic-salary")
+    @GetMapping(value = "/basic-salary")
     public ResponseEntity<Object> getBasicSalary() {
         logger.info("inside getBasicSalary API");
         return new ResponseEntity(salaryService.getBasicSalary(), HttpStatus.OK);
     }
 
-    @GetMapping(value = "/basic-salary")
-    public ResponseEntity<ApiStatusVm> updateBasicSalary(@Positive @RequestParam double newBasicSalary) {
+    @PatchMapping(value = "/basic-salary")
+    public ResponseEntity<ApiStatusVm> updateBasicSalary(@Positive(message = "Amount must be greater than 0") @RequestParam double newBasicSalary) {
         logger.info("inside updateBasicSalary API");
         return new ResponseEntity(salaryService.updateBasicSalary(newBasicSalary), HttpStatus.OK);
     }
 
-    @GetMapping(value = "/get-company-balance")
+    @GetMapping(value = "/company-balance")
     public ResponseEntity<Object> getCompanySalaryAcBalance() {
         logger.info("inside getCompanySalaryAcBalance API");
         return new ResponseEntity(salaryService.getCompanySalaryAcBalance(), HttpStatus.OK);
     }
 
-    @GetMapping(value = "/company-balance")
-    public ResponseEntity<ApiStatusVm> updateComSalaryAcBalance(@Positive @RequestParam double newBalance) {
+    @PatchMapping(value = "/company-balance")
+    public ResponseEntity<ApiStatusVm> updateComSalaryAcBalance(@Positive(message = "Amount must be greater than 0") @RequestParam double newBalance) {
         logger.info("inside updateComSalaryAcBalance API");
         return new ResponseEntity(salaryService.updateComSalaryAcBalance(newBalance), HttpStatus.OK);
     }

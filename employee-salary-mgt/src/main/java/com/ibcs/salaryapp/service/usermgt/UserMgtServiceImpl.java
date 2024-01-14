@@ -325,9 +325,9 @@ public class UserMgtServiceImpl implements UserMgtService {
         UserInfo user = userInfoRepo.findTop1ByUserEmailAndActive(email, true);
 
         if (user != null) {
-            return new ApiStatusVm("User exist with this email", true);
+            return new ApiStatusVm("User exist with this email", true, email);
         } else {
-            return new ApiStatusVm("No user with this email", false);
+            return new ApiStatusVm("No user with this email", false, email);
         }
     }
 

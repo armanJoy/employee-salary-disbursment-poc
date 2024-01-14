@@ -103,25 +103,17 @@ public class SalaryServiceImpl implements SalaryService {
         return empSalaryRepo.getDisbursedSalaryInfo(month, year);
     }
 
-    @Override
-    public List<EmployeeSalary> getEmployeeSalaryDetails() {
-        List<EmployeeSalary> employeeSalarys = empSalaryRepo.getEmployeeSalaryDetails();
-        return employeeSalarys;
-    }
-
+//    @Override
+//    public List<EmployeeSalary> getEmployeeSalaryDetails() {
+//        List<EmployeeSalary> employeeSalarys = empSalaryRepo.getEmployeeSalaryDetails();
+//        return employeeSalarys;
+//    }
     @Override
     @Transactional
     public DisbursedSalaryVm disburseMonthlySalary(int month, int year) {
         DisbursedSalaryVm disbursedSalaryVm = new DisbursedSalaryVm();
         List<EmployeeSalary> disbursedEmployees = new ArrayList<>();
-//        List<Object> paidEmployees = new ArrayList<>();
-//        try {
-//            empSalaryRepo.populateEmployeeSalary(month, year);
-//            System.out.println("Salary populated");
-//        } catch (Exception e) {
-//            logger.info(this.getClass().getName() + " :inside disburseMonthlySalary method\nError: " + e.getMessage());
-//            System.out.println("Salary populated");
-//        }
+
         double balance = companyBankAcRepo.getCompanySalaryAcBalance(AppConstant.COMPANY_BANK_AC_ID);
         double disbursedSalary = 0;
         double undisbursedSalary = 0;
@@ -135,6 +127,7 @@ public class SalaryServiceImpl implements SalaryService {
                 empSalary.setUserId(employeeSalary.getId());
                 empSalary.setBankId(employeeSalary.getBankId());
                 empSalary.setSAmount(salary);
+                empSalary.setBonusPer(employeeSalary.getBonusPer());
                 empSalary.setSMonth(month);
                 empSalary.setSYear(year);
                 empSalary.setDisbursed(true);
@@ -188,6 +181,7 @@ public class SalaryServiceImpl implements SalaryService {
 
                 apiStatusVm.setJobDone(true);
                 apiStatusVm.setMsg("Salary disbursed successfully");
+                apiStatusVm.setData(dueSalary);
             } else {
                 apiStatusVm.setJobDone(false);
                 apiStatusVm.setMsg("Add more money to the company salary account");
@@ -202,6 +196,7 @@ public class SalaryServiceImpl implements SalaryService {
 
     @Override
     public ApiStatusVm disburseSalaryToSpecificUsers(List<EmployeeSalaryVm> disbursableSalary) {
+        List<EmployeeSalaryVm> disbursedEmployees = new ArrayList<>();
         ApiStatusVm apiStatusVm = new ApiStatusVm();
 
         double balance = companyBankAcRepo.getCompanySalaryAcBalance(AppConstant.COMPANY_BANK_AC_ID);
@@ -218,35 +213,44 @@ public class SalaryServiceImpl implements SalaryService {
                 empSalary.setUserId(employeeSalary.getId());
                 empSalary.setBankId(employeeSalary.getBankId());
                 empSalary.setSAmount(salary);
+                empSalary.setBonusPer(employeeSalary.getBonusPer());
                 empSalary.setSMonth(employeeSalary.getMonth());
                 empSalary.setSYear(employeeSalary.getYear());
                 empSalary.setDisbursed(true);
                 balance -= salary;
                 disbursedSalary += salary;
                 disbursedSalaries.add(empSalary);
+
+                employeeSalary.setDisbursed(true);
+                employeeSalary.setBankId(employeeSalary.getBankId());
+                disbursedEmployees.add(employeeSalary);
             } else {
                 undisbursedSalary += salary > 0 ? salary : 0;
             }
 
         }
+        if (disbursedSalaries.size() == 0) {
+            apiStatusVm.setJobDone(false);
+            apiStatusVm.setMsg("Insufficient balance. Need " + Math.abs(balance - undisbursedSalary) + " tk");
+            apiStatusVm.setData(new ArrayList<>());
 
-        try {
-            disbursedSalaries = empSalaryRepo.saveAll(disbursedSalaries);
-
-            if (disbursedSalaries.size() == disbursableSalary.size()) {
+        } else {
+            try {
+                disbursedSalaries = empSalaryRepo.saveAll(disbursedSalaries);
+                apiStatusVm.setData(disbursedEmployees);
                 apiStatusVm.setJobDone(true);
-                apiStatusVm.setMsg("Salary disbursed successfully");
-            } else if (disbursedSalaries.size() == 0) {
-                apiStatusVm.setJobDone(false);
-                apiStatusVm.setMsg("Insufficient balance. Need " + Math.abs(balance - undisbursedSalary) + " tk");
+                if (disbursedSalaries.size() == disbursableSalary.size()) {
+                    apiStatusVm.setMsg("Salary disbursed successfully");
+                } else {
+                    apiStatusVm.setMsg("Disbursed " + disbursedSalaries.size() + " out of " + disbursableSalary.size() + " salaries. Need " + Math.abs(balance - undisbursedSalary) + " tk");
+                }
+                CompanyBankAc companyBankAc = companyBankAcRepo.updateCompanySalaryAcBalance((disbursedSalary * -1), AppConstant.COMPANY_BANK_AC_ID);
+
+            } catch (Exception e) {
+                apiStatusVm.setMsg("Error: " + e.getMessage());
+                logger.info(this.getClass().getName() + " :inside updateComSalaryAcBalance method\nError: " + e.getMessage());
             }
-            CompanyBankAc companyBankAc = companyBankAcRepo.updateCompanySalaryAcBalance((disbursedSalary * -1), AppConstant.COMPANY_BANK_AC_ID);
-
-        } catch (Exception e) {
-            apiStatusVm.setMsg("Error: " + e.getMessage());
-            logger.info(this.getClass().getName() + " :inside updateComSalaryAcBalance method\nError: " + e.getMessage());
         }
-
         return apiStatusVm;
     }
 

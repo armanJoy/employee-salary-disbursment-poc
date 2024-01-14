@@ -1,5 +1,6 @@
 package com.ibcs.salaryapp.model.view.salary;
 
+import java.time.LocalDate;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -17,7 +18,11 @@ public class EmployeeSalaryVm {
 
     private int rank;
 
+    private LocalDate joiningDate;
+
     private double salary;
+
+    private double bonusPer = 0.0;
 
     private int month;
 

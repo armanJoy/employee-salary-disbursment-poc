@@ -40,7 +40,7 @@ public class UserMgtCtrl {
             return new ResponseEntity(status, (status.isJobDone()) ? HttpStatus.OK : HttpStatus.BAD_REQUEST);
         } catch (Exception e) {
 
-            return new ResponseEntity(new ApiStatusVm("Error occured.", false), HttpStatus.BAD_REQUEST);
+            return new ResponseEntity(new ApiStatusVm("Error occured.", false, null), HttpStatus.BAD_REQUEST);
         }
 
     }

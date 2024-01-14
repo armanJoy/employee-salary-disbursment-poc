@@ -49,6 +49,10 @@ public class EmpSalary extends TimeAuditor implements Serializable {
     private double sAmount;
 
     @Builder.Default
+    @Column(name = "bonusPer", nullable = false, columnDefinition = "DOUBLE PRECISION DEFAULT 0.0")
+    private double bonusPer = 0.0;
+
+    @Builder.Default
     @Column(name = "disbursed", nullable = false, columnDefinition = "BOOLEAN DEFAULT FALSE")
     private boolean disbursed = false;
 }
